@@ -24,7 +24,7 @@ jobs:
     - uses: actions/checkout@v1
     #using the create-output.sh as a guide...
     - name: g++ compilation
-      run:  g++ -g -std=c++14 -Wall -Wextra -Wno-sign-compare applib/pokedex.cpp building.cpp
+      run:  g++ -g -std=c++14 -Wall -Wextra -Wno-sign-compare applib/*.cpp building.cpp
 
     # was at least able to get this part working while not breaking the gTest + bazel. 
     # The rest will also need to be added as well, but for now, this is a good stopping point it working tonight...
