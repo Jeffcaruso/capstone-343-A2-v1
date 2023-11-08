@@ -8,8 +8,8 @@
 // binarysearchtreee.cpp file is included at the bottom of the .h file
 // binarysearchtreee.cpp is part of the template, cannot be compiled separately
 
-#ifndef BST_HPP
-#define BST_HPP
+// #ifndef BST_HPP
+// #define BST_HPP
 
 #include <algorithm>
 #include <cmath>
@@ -214,4 +214,4 @@ public:
   bool operator!=(const BST<T> &Other) const { return true; }
 };
 
-#endif // BST_HPP
+// #endif // BST_HPP
