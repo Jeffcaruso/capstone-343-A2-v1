@@ -16,6 +16,10 @@
 
 using namespace std;
 
+//note, I tried to do student testing. Some to all of them did bstMap instead...
+// how should this be handled for moving forward... Is there something in the project that was removed/
+//  re-defined. As far as testing, I guess I could still grab the student code with changing it, but that would certainly take longer...
+
 /**
  * Testing BST - Binary Search Tree functions
  *
