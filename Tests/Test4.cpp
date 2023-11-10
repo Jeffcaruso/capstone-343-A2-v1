@@ -1,8 +1,8 @@
 //============================================================================
 // Name        : Test4
-// Test Desc.  : Test to check negative #'s
-//				 	(coverage for old test 3 method)
-// Author      : Jeffrey Caruso
+// Test Desc.  : Student custom testing aka Testing samplefunctionality
+//				 	(coverage for old testSample01() method)
+// Author      : Jeffrey Caruso, Yusuf Pisan
 // Date    	   : Fall 2023
 //============================================================================
 
@@ -13,7 +13,6 @@
 #include <sstream>
 
 using namespace std;
-
 
 /**
  * Testing BST - Binary Search Tree functions
@@ -32,7 +31,6 @@ using namespace std;
  * @author Multiple
  * @date ongoing
  */
-
 
 /**
  * Trying to avoid global variables,
@@ -76,7 +74,7 @@ template <class T> void visitorSimple(const T &Item) {
 // Student added test methods as desired to sample...
 TEST(Test4, sample01)
 {
-	//student will fill with tests
+	//student may fill with tests
 
 	// no tests occuring within this should return true...
 	

@@ -2,7 +2,7 @@
 // Name        : Test1
 // Test Desc.  : Test == (basic)
 //				 	(coverage for old test 1 method)
-// Author      : Jeffrey Caruso
+// Author      : Jeffrey Caruso, Yusuf Pisan
 // Date    	   : Fall 2023
 //============================================================================
 
@@ -82,28 +82,15 @@ TEST(Test1, TestEquality)
 	BST<string> B2;
 	BST<string> B3;
 
+	//test equality operators
 	EXPECT_TRUE(B1 == B2 && (!(B1 != B2)));
+	//add letters
 	B1.add("c");
 	B2.add("c");
 	B3.add("b");
 
-	//   assert(B1 == B2 && (!(B1 != B2)));
+	// testing equality
 	EXPECT_TRUE(B1 == B2 && (!(B1 != B2)));
-	//   assert(B1 != B3 && (!(B1 == B3)));
+	// testing equality
 	EXPECT_TRUE(B1 != B2 && (!(B1 == B3)));
-
-	// cout << "Starting testPisan01" << endl;
-	//   cout << "* Testing == and !=" << endl;
-	//   BST<string> B1;
-	//   BST<string> B2;
-	//   BST<string> B3;
-	//   // == and != for empty trees
-	//   assert(B1 == B2 && (!(B1 != B2)));
-	//   B1.add("c");
-	//   B2.add("c");
-	//   B3.add("b");
-	//   // == and !- for 1-Node trees B1, B2, B3
-	//   assert(B1 == B2 && (!(B1 != B2)));
-	//   assert(B1 != B3 && (!(B1 == B3)));
-	//   cout << "Ending testPisan01" << endl;
 }

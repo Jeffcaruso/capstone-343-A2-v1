@@ -1,8 +1,8 @@
 //============================================================================
 // Name        : Test3
-// Test Desc.  : Testing traversal
+// Test Desc.  : Testing traversal methods on BSTs
 //				 	(coverage for old test 3 method)
-// Author      : Jeffrey Caruso
+// Author      : Jeffrey Caruso, Yusuf Pisan
 // Date    	   : Fall 2023
 //============================================================================
 
@@ -32,7 +32,6 @@ using namespace std;
  * @author Multiple
  * @date ongoing
  */
-
 
 /**
  * Trying to avoid global variables,
@@ -121,8 +120,4 @@ TEST(Test3, testBSTTraversal)
 	// visual check of B1
 	cout << "Visual check B1:" << endl;
 	cout << B1 << endl;
-	cout << "Ending testPisan03" << endl;
 }
-
-// There is no meaningful split here that is not already covered by Test 1 or Test 2.
-// Thus, this is best left as 1 comprehensive test of negative numbers and their proper use in student BigNum class

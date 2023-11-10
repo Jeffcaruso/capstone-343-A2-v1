@@ -1,8 +1,8 @@
 //============================================================================
 // Name        : Test2
-// Test Desc.  : Testing detailed == operations
+// Test Desc.  : Testing == (detailed) testing and operations
 //				 	(coverage for old test 2 method)
-// Author      : Jeffrey Caruso
+// Author      : Jeffrey Caruso, Yusuf Pisan
 // Date    	   : Fall 2023
 //============================================================================
 
@@ -37,7 +37,6 @@ using namespace std;
  * @author Multiple
  * @date ongoing
  */
-
 
 /**
  * Trying to avoid global variables,
@@ -84,8 +83,6 @@ template <class T> void visitorSimple(const T &Item) {
 //detailed == testing
 TEST(Test2one, DetailedEqualityTesting)
 {
-	//   cout << "* Testing == and != with more detail" << endl;
-
 	BST<string> B1;
 	BST<string> B2;
 	BST<string> B3;
