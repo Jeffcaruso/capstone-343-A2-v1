@@ -1,67 +1,127 @@
 //============================================================================
 // Name        : Test3
-// Test Desc.  : Test to check negative #'s
+// Test Desc.  : Testing traversal
 //				 	(coverage for old test 3 method)
 // Author      : Jeffrey Caruso
 // Date    	   : Fall 2023
 //============================================================================
 
 #include <gtest/gtest.h>
-#include "applib/largenum.h"
+#include "applib/bst.h"
 
 #include <iostream>
 #include <sstream>
 
 using namespace std;
 
-TEST(Test3, checkNegativeNumbers)
+
+/**
+ * Testing BST - Binary Search Tree functions
+ *
+ * This file has series of tests for BST
+ * Each test is independent and uses assert statements
+ * Test functions are of the form
+ *
+ *      test_netidXX()
+ *
+ * where netid is UW netid and XX is the test number starting from 01
+ *
+ * Test functions can only use the public functions from BST
+ * testBSTAll() is called from main in main.cpp
+ * testBSTAll calls all other functions
+ * @author Multiple
+ * @date ongoing
+ */
+
+
+/**
+ * Trying to avoid global variables,
+ * by creating a singleton class with our visitor functions
+ * stringstream SS contains the output from visitor
+ */
+class TreeVisitor {
+public:
+  // never create an instance of TreeVisitor object
+  // we'll just use the static functions
+  TreeVisitor() = delete;
+
+  // insert output to SS rather than cout, so we can test it
+  static stringstream SS;
+
+  // get SS as a string
+  static string getSS() { return SS.str(); }
+
+  // set SS to be empty string
+  static void resetSS() { SS.str(string()); }
+
+  // instead of cout, insert item into SS, a stringstream object
+  static void visitor(const string &Item) { SS << Item; }
+
+  // instead of cout, insert item into SS, a stringstream object
+  static void visitor(const int &Item) { SS << Item; }
+};
+
+// initialize the static variable
+//  warning: initialization of 'SS' with static storage duration
+//  may throw an exception that cannot be caught [cert-err58-cpp]
+//  Not sure how to do it without making code harder to read
+//  NOLINTNEXTLINE
+stringstream TreeVisitor::SS;
+
+template <class T> void visitorSimple(const T &Item) {
+  cout << "visitorSimple: " << Item;
+}
+
+
+
+// Testing traversal
+TEST(Test3, testBSTTraversal)
 {
-	//misc testing x3
-	stringstream strs;
-	LargeNum num0("-1234567890123456789");
-	strs << num0;
-	string ans0Str = "-1,234,567,890,123,456,789";
-	EXPECT_EQ(strs.str(), ans0Str);
+	BST<string> B1;
+	BST<string> B2;
+	BST<string> B3;
+	
+	//add to B1
+    for (auto &S : vector<string>{"c", "a", "f", "g", "x"})
+    	B1.add(S);
 
-	strs.str("");
-	LargeNum num1(-12345);
-	strs << num1;
-	string ans1Str = "-12,345";
-	EXPECT_EQ(strs.str(), ans1Str);
+	//add to B2
+    for (auto &S : vector<string>{"c", "f", "a", "g", "x"})
+    	B2.add(S);
 
-	strs.str("");
-	LargeNum numZero(-0000);
-	strs << numZero;
-	string ans2Str = "0";
-	EXPECT_EQ(strs.str(), ans2Str);
+	//add to B3
+    B3.add("b");
 
-	//check isZero
-	EXPECT_TRUE(LargeNum(0).isZero());
-	EXPECT_TRUE(LargeNum(-0).isZero());
+	//reset StringStream to ""
+	TreeVisitor::resetSS();
+	B1.inOrderTraverse(TreeVisitor::visitor);
+	string expectedResult = "acfgx";
+	// check that SS matches expected Result
+	EXPECT_EQ(TreeVisitor::getSS(), expectedResult);
 
-	//check == operator on 0, -0.
-	EXPECT_TRUE(LargeNum(0) == LargeNum(-0));
+	// testing out simpleVisitor to demonstrate
+	// any function that has a matching signature can be called
+	B1.inOrderTraverse(visitorSimple);
 
-	//check negation operator
-	EXPECT_TRUE(LargeNum(0).negate() == LargeNum(-0));
+	//reset SS
+	TreeVisitor::resetSS();
+	//do a preorder traversal
+	B1.preOrderTraverse(TreeVisitor::visitor);
+	//set expected result to new expected result...
+	expectedResult = "cafgx";
+	// check that SS matches expected Result
+	EXPECT_EQ(TreeVisitor::getSS(), expectedResult);
 
-	//combination add, sub, then equality operator usage...
-	// 100 - 100 = 0
-	EXPECT_TRUE(LargeNum(100) - LargeNum(100) == LargeNum(0));
-	// 100 + -100 = 0
-	EXPECT_TRUE(LargeNum(100) + LargeNum(-100) == LargeNum(0));
-	// 100 - (-100) = 200
-	EXPECT_TRUE(LargeNum(100) - LargeNum(-100) == LargeNum(200));
-	// -100 - (-100) = 0
-	EXPECT_TRUE(LargeNum(-100) - LargeNum(-100) == LargeNum(0));
-	// -100 + 100 = 0
-	EXPECT_TRUE(LargeNum(-100) + LargeNum(100) == LargeNum(0));
-	// 100 - 7 = 93
-	EXPECT_TRUE(LargeNum(100) - LargeNum(7) == LargeNum(93));
-	// 7 - 100 = -93
-	EXPECT_TRUE(LargeNum(7) - LargeNum(100) == LargeNum(-93));
-	// -7 + (-100) = -107
-	EXPECT_TRUE(LargeNum(-7) + LargeNum(-100) == LargeNum(-107));
+	TreeVisitor::resetSS();
+	B1.postOrderTraverse(TreeVisitor::visitor);
+	expectedResult = "axgfc";
+	// check that SS matches expected Result
+	EXPECT_EQ(TreeVisitor::getSS(), expectedResult);
+
+	// visual check of B1
+	cout << "Visual check B1:" << endl;
+	cout << B1 << endl;
+	cout << "Ending testPisan03" << endl;
 }
 
 // There is no meaningful split here that is not already covered by Test 1 or Test 2.
