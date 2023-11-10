@@ -37,6 +37,7 @@ using namespace std;
  * by creating a singleton class with our visitor functions
  * stringstream SS contains the output from visitor
  */
+
 class TreeVisitor {
 public:
   // never create an instance of TreeVisitor object
