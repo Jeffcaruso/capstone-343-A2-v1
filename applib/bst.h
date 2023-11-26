@@ -46,7 +46,7 @@ private:
   Node *Root{nullptr};
 
   // height of a Node, nullptr is 0, Root is 1, static, no access to 'this'
-  static int getHeight(const Node *N) { return 0; }
+  static int getHeight(const Node *N)
 
   /**
    * print tree sideways with root on left
@@ -152,7 +152,7 @@ public:
   BST() {}
 
   // constructor, tree with root
-  explicit BST(const T &RootItem) {}
+  explicit BST(const T &RootItem) {this.Root = RootItem; }
 
   // given an array of length n
   // create a tree to have all items in that array
@@ -166,17 +166,17 @@ public:
   BST(const BST<T> &Bst) {}
 
   // destructor
-  virtual ~BST() {}
+  virtual ~BST() { clear(); }
 
   // true if no nodes in BST
-  bool isEmpty() const { return true; }
+  bool isEmpty() const { return root == nullptr; }
 
   // 0 if empty, 1 if only root, otherwise
   // height of root is max height of subtrees + 1
-  int getHeight() const { return 0; }
+  int getHeight() const
 
   // Number of nodes in BST
-  int numberOfNodes() const { return 0; }
+  int numberOfNodes() const
 
   // add a new item, return true if successful
   // return false if the item is a duplicate
@@ -209,10 +209,10 @@ public:
 
   // trees are equal if they have the same structure
   // AND the same item values at all the nodes
-  bool operator==(const BST<T> &Other) const { return true; }
+  bool operator==(const BST<T> &Other) const
 
   // not == to each other
-  bool operator!=(const BST<T> &Other) const { return true; }
+  bool operator!=(const BST<T> &Other) const
 };
 
 // #endif // BST_HPP
