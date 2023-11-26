@@ -174,7 +174,7 @@ void BST::clearHelper(Node *curr) {
 
 // trees are equal if they have the same structure
 // AND the same item values at all the nodes
-bool BST::operator==(const BSTMap &other) const {
+bool BST::operator==(const BST &other) const {
   if (empty() && other.empty()) {
     return true;
   }
@@ -209,4 +209,4 @@ bool BST::operator==(const BSTMap &other) const {
 }
 
 // not == to each other
-bool BST::operator!=(const BSTMap &other) const { return !(*this == other); }
+bool BST::operator!=(const BST &other) const { return !(*this == other); }

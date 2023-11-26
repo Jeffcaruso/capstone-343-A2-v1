@@ -173,10 +173,10 @@ public:
 
   // 0 if empty, 1 if only root, otherwise
   // height of root is max height of subtrees + 1
-  int getHeight() const
+  int getHeight() const;
 
   // Number of nodes in BST
-  int numberOfNodes() const
+  int numberOfNodes() const;
 
   // add a new item, return true if successful
   // return false if the item is a duplicate
@@ -209,10 +209,10 @@ public:
 
   // trees are equal if they have the same structure
   // AND the same item values at all the nodes
-  bool operator==(const BST<T> &Other) const
+  bool operator==(const BST<T> &Other) const;
 
   // not == to each other
-  bool operator!=(const BST<T> &Other) const
+  bool operator!=(const BST<T> &Other) const;
 };
 
 // #endif // BST_HPP
