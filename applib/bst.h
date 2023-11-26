@@ -46,7 +46,7 @@ private:
   Node *Root{nullptr};
 
   // height of a Node, nullptr is 0, Root is 1, static, no access to 'this'
-  static int getHeight(const Node *N)
+  static int getHeight(const Node *N);
 
   /**
    * print tree sideways with root on left
@@ -169,7 +169,7 @@ public:
   virtual ~BST() { clear(); }
 
   // true if no nodes in BST
-  bool isEmpty() const { return root == nullptr; }
+  bool isEmpty() const { return Root == nullptr; }
 
   // 0 if empty, 1 if only root, otherwise
   // height of root is max height of subtrees + 1
