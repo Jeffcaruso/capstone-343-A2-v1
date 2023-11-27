@@ -26,7 +26,7 @@ int BST<Node>::getHeight(const Node *n) {
 
 // Number of nodes in BST
 template<class Node>
-int BST<Node>::numberOfNodes() const { return sizeHelper(root); }
+int BST<Node>::numberOfNodes() const { return sizeHelper(Root); }
 
 // gets size recursively
 int BST<Node>::sizeHelper(Node *node) const {
@@ -40,6 +40,7 @@ int BST<Node>::sizeHelper(Node *node) const {
 
 
 // true if item is in BST
+template<class Node>
 bool BST<Node>::contains(const key_type &key) const {
   Node *curr;
   curr = root;
@@ -56,7 +57,8 @@ bool BST<Node>::contains(const key_type &key) const {
 
 // inorder traversal: left-root-right
 // takes a function that takes a single parameter of type T
-void BST::inorder(void visit(const value_type &item)) const {
+template<class Node>
+void BST<Node>::inorder(void visit(const value_type &item)) const {
   if (!empty()) {
     Node *curr = root;
     stack<Node *> order;
@@ -75,7 +77,8 @@ void BST::inorder(void visit(const value_type &item)) const {
 
 
 // preorder traversal: root-left-right
-void BST::preorder(void visit(const value_type &item)) const {
+template<class Node>
+void BST<Node>::preorder(void visit(const value_type &item)) const {
   if (!empty()) {
     Node *curr = root;
     stack<Node *> order;
@@ -97,7 +100,8 @@ void BST::preorder(void visit(const value_type &item)) const {
 
 
 // postorder traversal: left-right-root
-void BST::postorder(void visit(const value_type &item)) const {
+template<class Node>
+void BST<Node>::postorder(void visit(const value_type &item)) const {
   if (!empty()) {
     Node *curr = root;
     stack<Node *> order;
@@ -125,7 +129,8 @@ void BST::postorder(void visit(const value_type &item)) const {
 
 // balance the BST by saving all nodes to a vector inorder
 // and then recreating the BST from the vector
-void BST::rebalance() {
+template<class Node>
+void BST<Node>::rebalance() {
   if (root != nullptr) {
     vector<Node *> nodes;
     nodesInVector(root, nodes);
@@ -159,13 +164,15 @@ void BST::rebalance() {
 }
 
 
-void BST::clear()
+template<class Node>
+void BST<Node>::clear()
 {
     clearHelper(this.root);
     this.root = nullptr;
 }
 
-void BST::clearHelper(Node *curr) {
+template<class Node>
+void BST<Node>::clearHelper(Node *curr) {
   if (curr != nullptr) {
     clearHelper(curr->left);
     clearHelper(curr->right);
@@ -176,7 +183,8 @@ void BST::clearHelper(Node *curr) {
 
 // trees are equal if they have the same structure
 // AND the same item values at all the nodes
-bool BST::operator==(const BST &other) const {
+template<class Node>
+bool BST<Node>::operator==(const BST &other) const {
   if (empty() && other.empty()) {
     return true;
   }
@@ -211,4 +219,5 @@ bool BST::operator==(const BST &other) const {
 }
 
 // not == to each other
-bool BST::operator!=(const BST &other) const { return !(*this == other); }
+template<class Node>
+bool BST<Node>::operator!=(const BST &other) const { return !(*this == other); }
