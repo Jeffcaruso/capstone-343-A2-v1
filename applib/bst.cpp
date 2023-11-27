@@ -78,6 +78,7 @@ void BST<Node>::inOrderTraverse(void visit(const value_type &item)) const {
 
 // preorder traversal: root-left-right
 template<class Node>
+//review vlaue_type...? may not be right thing...
 void BST<Node>::preOrderTraverse(void visit(const value_type &item)) const {
   if (!empty()) {
     Node *curr = root;
