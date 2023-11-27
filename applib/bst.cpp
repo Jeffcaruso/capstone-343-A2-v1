@@ -25,6 +25,7 @@ int BST<Node>::getHeight(const Node *n) {
 
 
 // Number of nodes in BST
+template<class Node>
 int BST<Node>::numberOfNodes() const { return sizeHelper(root); }
 
 // gets size recursively
