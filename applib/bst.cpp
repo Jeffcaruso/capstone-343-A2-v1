@@ -58,7 +58,7 @@ bool BST<Node>::contains(const key_type &key) const {
 // inorder traversal: left-root-right
 // takes a function that takes a single parameter of type T
 template<class Node>
-void BST<Node>::inorder(void visit(const value_type &item)) const {
+void BST<Node>::inOrderTraverse(void visit(const value_type &item)) const {
   if (!empty()) {
     Node *curr = root;
     stack<Node *> order;
@@ -78,7 +78,7 @@ void BST<Node>::inorder(void visit(const value_type &item)) const {
 
 // preorder traversal: root-left-right
 template<class Node>
-void BST<Node>::preorder(void visit(const value_type &item)) const {
+void BST<Node>::preOrderTraverse(void visit(const value_type &item)) const {
   if (!empty()) {
     Node *curr = root;
     stack<Node *> order;
@@ -101,7 +101,7 @@ void BST<Node>::preorder(void visit(const value_type &item)) const {
 
 // postorder traversal: left-right-root
 template<class Node>
-void BST<Node>::postorder(void visit(const value_type &item)) const {
+void BST<Node>::postOrderTraverse(void visit(const value_type &item)) const {
   if (!empty()) {
     Node *curr = root;
     stack<Node *> order;
