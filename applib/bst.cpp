@@ -25,10 +25,10 @@ int BST<Node>::getHeight(const Node *n) {
 
 
 // Number of nodes in BST
-int BST::numberOfNodes() const { return sizeHelper(root); }
+int BST<Node>::numberOfNodes() const { return sizeHelper(root); }
 
 // gets size recursively
-int BST::sizeHelper(Node *node) const {
+int BST<Node>::sizeHelper(Node *node) const {
   if (node == nullptr) {
     return 0;
   }
@@ -39,7 +39,7 @@ int BST::sizeHelper(Node *node) const {
 
 
 // true if item is in BST
-bool BSTMap::contains(const key_type &key) const {
+bool BST<Node>::contains(const key_type &key) const {
   Node *curr;
   curr = root;
   while (curr != nullptr && curr->data.first != key) {
