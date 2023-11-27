@@ -6,7 +6,7 @@
 
 // height of a Node, nullptr is 0, root is 1, static, no access to 'this'
 // helper function to height(), used by printVertical
-int BST::getHeight(const Node *n) {
+int BST<BST>::getHeight(const Node *n) {
   if (n == nullptr) {
     return 0;
   }
