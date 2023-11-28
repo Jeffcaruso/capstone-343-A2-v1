@@ -1,6 +1,6 @@
-//included by bst.h (this is a header because of template usage...)
+// @todo : update this to have the standard top of file description
 
-
+// Included by bst.h (this is a header because of template usage...)
 // INCLUDES SHOULD BE IN BST.H!!!
 
 
