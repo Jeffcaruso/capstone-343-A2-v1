@@ -2,12 +2,12 @@
 #include <algorithm>
 #include <cassert>
 
-
+uisng namespace std;
 
 // height of a Node, nullptr is 0, root is 1, static, no access to 'this'
 // helper function to height(), used by printVertical
-template<struct Node>
-int BST<Node>::getHeight(const Node *n) {
+template<typename T>
+int BST<T>::getHeight(const Node *n) {
   if (n == nullptr) {
     return 0;
   }
@@ -25,8 +25,8 @@ int BST<Node>::getHeight(const Node *n) {
 
 
 // Number of nodes in BST
-template<struct Node>
-int BST<Node>::numberOfNodes() const { return sizeHelper(Root); }
+template<typename T>
+int BST<T>::numberOfNodes() const { return sizeHelper(Root); }
 
 // gets size recursively
 int BST<Node>::sizeHelper(Node *node) const {
