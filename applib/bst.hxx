@@ -4,7 +4,7 @@
 #include <stack>
 //#include <cassert>
 
-//using namespace std;
+using namespace std;
 
 // height of a Node, nullptr is 0, root is 1, static, no access to 'this'
 // helper function to height(), used by printVertical
