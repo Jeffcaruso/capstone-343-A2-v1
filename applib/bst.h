@@ -217,4 +217,4 @@ public:
   #include "bst.hxx"
 };
 
-#endif BST_H
+#endif //BST_H
