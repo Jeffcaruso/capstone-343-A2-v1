@@ -1,7 +1,8 @@
 //included by bst.h (this is a header because of template usage...)
-#include <algorithm>
-#include <iostream>
-#include <stack>
+
+
+//maybe needed to move to bst.h..? ------------------
+
 //#include <cassert>
 
 //using namespace std;

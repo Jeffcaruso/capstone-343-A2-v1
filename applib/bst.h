@@ -20,6 +20,12 @@
 #include <string>
 #include <cstdint>  //uint64
 
+//from bst.hxx
+//#include <algorithm>
+//#include <iostream>
+#include <stack>
+#include <vector>
+
 using namespace std;
 
 template <class T> class BST {
