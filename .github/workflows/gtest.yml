@@ -22,9 +22,9 @@ jobs:
       run: sudo npm install -g @bazel/bazelisk
     - uses: actions/checkout@v1
     - name: g++ compilation
-      run:  g++ -g -std=c++17 -Wall -Wextra -Wno-sign-compare applib/*.cpp building.cpp
+      run:  g++ -g -std=c++17 -Wall -Wextra -Wno-sign-compare building.cpp
     - name: clang tidy build
-      run: clang++ -g -std=c++17 -Wall -Wextra -Wno-sign-compare applib/*.cpp building.cpp
+      run: clang++ -g -std=c++17 -Wall -Wextra -Wno-sign-compare building.cpp
 
   Run_Test_1:
     needs: build

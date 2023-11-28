@@ -213,8 +213,10 @@ public:
 
   // not == to each other
   bool operator!=(const BST<T> &Other) const;
+
+  #include "bst.hxx"
 };
 
-#include "bst.hxx"
+
 
 // #endif // BST_HPP
