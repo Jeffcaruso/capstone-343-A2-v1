@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <cassert>
 
-uisng namespace std;
+using namespace std;
 
 // height of a Node, nullptr is 0, root is 1, static, no access to 'this'
 // helper function to height(), used by printVertical
@@ -29,7 +29,8 @@ template<typename T>
 int BST<T>::numberOfNodes() const { return sizeHelper(Root); }
 
 // gets size recursively
-int BST<Node>::sizeHelper(Node *node) const {
+template<typename T>
+int BST<T>::sizeHelper(Node *node) const {
   if (node == nullptr) {
     return 0;
   }
@@ -40,8 +41,8 @@ int BST<Node>::sizeHelper(Node *node) const {
 
 
 // true if item is in BST
-template<class Node>
-bool BST<Node>::contains(const key_type &key) const {
+template<typename T>
+bool BST<T>::contains(const key_type &key) const {
   Node *curr;
   curr = root;
   while (curr != nullptr && curr->data.first != key) {
@@ -57,8 +58,8 @@ bool BST<Node>::contains(const key_type &key) const {
 
 // inorder traversal: left-root-right
 // takes a function that takes a single parameter of type T
-template<class Node>
-void BST<Node>::inOrderTraverse(void visit(const value_type &item)) const {
+template<typename T>
+void BST<T>::inOrderTraverse(void visit(const value_type &item)) const {
   if (!empty()) {
     Node *curr = root;
     stack<Node *> order;
@@ -77,9 +78,9 @@ void BST<Node>::inOrderTraverse(void visit(const value_type &item)) const {
 
 
 // preorder traversal: root-left-right
-template<class Node>
+template<typename T>
 //review vlaue_type...? may not be right thing...
-void BST<Node>::preOrderTraverse(void visit(const value_type &item)) const {
+void BST<T>::preOrderTraverse(void visit(const value_type &item)) const {
   if (!empty()) {
     Node *curr = root;
     stack<Node *> order;
@@ -101,8 +102,8 @@ void BST<Node>::preOrderTraverse(void visit(const value_type &item)) const {
 
 
 // postorder traversal: left-right-root
-template<class Node>
-void BST<Node>::postOrderTraverse(void visit(const value_type &item)) const {
+template<typename T>
+void BST<T>::postOrderTraverse(void visit(const value_type &item)) const {
   if (!empty()) {
     Node *curr = root;
     stack<Node *> order;
@@ -130,8 +131,8 @@ void BST<Node>::postOrderTraverse(void visit(const value_type &item)) const {
 
 // balance the BST by saving all nodes to a vector inorder
 // and then recreating the BST from the vector
-template<class Node>
-void BST<Node>::rebalance() {
+template<typename T>
+void BST<T>::rebalance() {
   if (root != nullptr) {
     vector<Node *> nodes;
     nodesInVector(root, nodes);
@@ -165,15 +166,15 @@ void BST<Node>::rebalance() {
 }
 
 
-template<class Node>
-void BST<Node>::clear()
+template<typename T>
+void BST<T>::clear()
 {
     clearHelper(this.root);
     this.root = nullptr;
 }
 
-template<class Node>
-void BST<Node>::clearHelper(Node *curr) {
+template<typename T>
+void BST<T>::clearHelper(Node *curr) {
   if (curr != nullptr) {
     clearHelper(curr->left);
     clearHelper(curr->right);
@@ -184,8 +185,8 @@ void BST<Node>::clearHelper(Node *curr) {
 
 // trees are equal if they have the same structure
 // AND the same item values at all the nodes
-template<class Node>
-bool BST<Node>::operator==(const BST &other) const {
+template<typename T>
+bool BST<T>::operator==(const BST &other) const {
   if (empty() && other.empty()) {
     return true;
   }
@@ -220,5 +221,8 @@ bool BST<Node>::operator==(const BST &other) const {
 }
 
 // not == to each other
-template<class Node>
-bool BST<Node>::operator!=(const BST &other) const { return !(*this == other); }
+template<class T>
+bool BST<T>::operator!=(const BST &other) const { return !(*this == other); }
+
+// template<class T>
+// bool BST<Node>::operator!=(const BST &other) const { return !(*this == other); }
