@@ -8,8 +8,8 @@
 // binarysearchtreee.cpp file is included at the bottom of the .h file
 // binarysearchtreee.cpp is part of the template, cannot be compiled separately
 
-// #ifndef BST_HPP
-// #define BST_HPP
+#ifndef BST_H
+#define BST_H
 
 #include <algorithm>
 #include <cmath>
@@ -217,6 +217,4 @@ public:
   #include "bst.hxx"
 };
 
-
-
-// #endif // BST_HPP
+#endif BST_H
