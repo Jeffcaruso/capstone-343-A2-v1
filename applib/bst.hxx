@@ -62,7 +62,7 @@ bool contains(const key_type &key) const {
 void inOrderTraverse(void visit(const value_type &item)) const {
   if (! isEmpty()) {
     Node *curr = Root;
-    stack<Node *> order;
+    stack<Node *> order(10,vector<Node *>(10));
     while (!order.empty() || curr != nullptr) {
       while (curr != nullptr) {
         order.push(curr);
