@@ -1,5 +1,7 @@
 //included by bst.h (this is a header because of template usage...)
 #include <algorithm>
+#include <stack>
+#include <queue>
 //#include <cassert>
 
 //using namespace std;
@@ -58,7 +60,7 @@ bool contains(const key_type &key) const {
 // takes a function that takes a single parameter of type T
 //template <class T>
 void inOrderTraverse(void visit(const value_type &item)) const {
-  if (!empty()) {
+  if (! isEmpty()) {
     Node *curr = Root;
     stack<Node *> order;
     while (!order.empty() || curr != nullptr) {
@@ -79,7 +81,7 @@ void inOrderTraverse(void visit(const value_type &item)) const {
 //review vlaue_type...? may not be right thing...
 //template <class T>
 void preOrderTraverse(void visit(const value_type &item)) const {
-  if (!empty()) {
+  if (!isEmpty()) {
     Node *curr = Root;
     stack<Node *> order;
     order.push(curr);
