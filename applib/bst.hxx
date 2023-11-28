@@ -1,11 +1,8 @@
 //included by bst.h (this is a header because of template usage...)
 
 
-//maybe needed to move to bst.h..? ------------------
+// INCLUDES SHOULD BE IN BST.H!!!
 
-//#include <cassert>
-
-//using namespace std;
 
 // height of a Node, nullptr is 0, root is 1, static, no access to 'this'
 // helper function to height(), used by printVertical
@@ -63,7 +60,7 @@ bool contains(const key_type &key) const {
 void inOrderTraverse(void visit(const value_type &item)) const {
   if (! isEmpty()) {
     Node *curr = Root;
-    std::stack<Node *> order(10,vector<Node *>(10));
+    std::stack<Node *> order;
     while (!order.empty() || curr != nullptr) {
       while (curr != nullptr) {
         order.push(curr);
@@ -84,7 +81,7 @@ void inOrderTraverse(void visit(const value_type &item)) const {
 void preOrderTraverse(void visit(const value_type &item)) const {
   if (!isEmpty()) {
     Node *curr = Root;
-    stack<Node *> order;
+    std::stack<Node *> order;
     order.push(curr);
     while (!order.empty()) {
       curr = order.top();
