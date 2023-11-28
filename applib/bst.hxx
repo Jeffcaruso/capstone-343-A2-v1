@@ -4,7 +4,7 @@
 #include <stack>
 //#include <cassert>
 
-using namespace std;
+//using namespace std;
 
 // height of a Node, nullptr is 0, root is 1, static, no access to 'this'
 // helper function to height(), used by printVertical
@@ -106,8 +106,8 @@ void preOrderTraverse(void visit(const value_type &item)) const {
 void postOrderTraverse(void visit(const value_type &item)) const {
   if (!isEmpty()) {
     Node *curr = Root;
-    stack<Node *> order;
-    stack<Node *> order2;
+    std::stack<Node *> order;
+    std::stack<Node *> order2;
     order.push(curr);
     while (!order.empty()) {
       curr = order.top();
