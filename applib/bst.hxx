@@ -40,7 +40,6 @@ int sizeHelper(Node *node) const {
 
 // true if item is in BST
 //template <class T>
-// key_type
 bool contains(const key_t &key) const {
   Node *curr;
   curr = Root;
@@ -58,7 +57,8 @@ bool contains(const key_t &key) const {
 // inorder traversal: left-root-right
 // takes a function that takes a single parameter of type T
 //template <class T>
-void inOrderTraverse(void visit(const value_type &item)) const {
+// value_t
+void inOrderTraverse(void visit(const value_t &item)) const {
   if (! isEmpty()) {
     Node *curr = Root;
     std::stack<Node *> order;
