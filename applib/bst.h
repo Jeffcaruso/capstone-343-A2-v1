@@ -194,15 +194,15 @@ public:
   // true if item is in BST
   bool contains(const T &Item) const { return true; }
 
-  // inorder traversal: left-root-right
-  // takes a function that takes a single parameter of type T
-  void inOrderTraverse(void Visit(const T &Item)) const; //{}
+  // // inorder traversal: left-root-right
+  // // takes a function that takes a single parameter of type T
+  // void inOrderTraverse(void Visit(const T &Item)) const; //{}
 
-  // preorder traversal: root-left-right
-  void preOrderTraverse(void Visit(const T &Item)) const;// {}
+  // // preorder traversal: root-left-right
+  // void preOrderTraverse(void Visit(const T &Item)) const;// {}
 
-  // postorder traversal: left-right-root
-  void postOrderTraverse(void Visit(const T &Item)) const; // {}
+  // // postorder traversal: left-right-root
+  // void postOrderTraverse(void Visit(const T &Item)) const; // {}
 
   // create dynamic array (not a vector)
   // copy all the items to the array
@@ -213,12 +213,12 @@ public:
   // delete all nodes in tree
   void clear() {}
 
-  // trees are equal if they have the same structure
-  // AND the same item values at all the nodes
-  bool operator==(const BST<T> &Other) const;
+  // // trees are equal if they have the same structure
+  // // AND the same item values at all the nodes
+  // bool operator==(const BST<T> &Other) const;
 
-  // not == to each other
-  bool operator!=(const BST<T> &Other) const;
+  // // not == to each other
+  // bool operator!=(const BST<T> &Other) const;
 
   #include "bst.hxx"
 };
