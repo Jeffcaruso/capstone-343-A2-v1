@@ -204,14 +204,14 @@ public:
   // // postorder traversal: left-right-root
   // void postOrderTraverse(void Visit(const T &Item)) const; // {}
 
-  // create dynamic array (not a vector)
-  // copy all the items to the array
-  // and then read the array to re-create this tree from scratch
-  // so that resulting tree is balanced
-  void rebalance() {}
+  // // create dynamic array (not a vector)
+  // // copy all the items to the array
+  // // and then read the array to re-create this tree from scratch
+  // // so that resulting tree is balanced
+  // void rebalance() {}
 
-  // delete all nodes in tree
-  void clear() {}
+  // // delete all nodes in tree
+  // void clear() {}
 
   // // trees are equal if they have the same structure
   // // AND the same item values at all the nodes
