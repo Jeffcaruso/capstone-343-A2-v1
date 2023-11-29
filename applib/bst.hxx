@@ -57,8 +57,9 @@ bool contains(const key_t &key) const {
 // inorder traversal: left-root-right
 // takes a function that takes a single parameter of type T
 //template <class T>
-// value_t
+
 //maybe key is ok, b/c this is using visit on the data...
+  // used to be (const value_type &item)
 void inOrderTraverse(void visit(const key_t &item)) const {
   if (! isEmpty()) {
     Node *curr = Root;
@@ -80,7 +81,7 @@ void inOrderTraverse(void visit(const key_t &item)) const {
 // preorder traversal: root-left-right
 //review vlaue_type...? may not be right thing...
 //template <class T>
-void preOrderTraverse(void visit(const value_type &item)) const {
+void preOrderTraverse(void visit(const key_t &item)) const {
   if (!isEmpty()) {
     Node *curr = Root;
     std::stack<Node *> order;
@@ -103,7 +104,7 @@ void preOrderTraverse(void visit(const value_type &item)) const {
 
 // postorder traversal: left-right-root
 //template <class T>
-void postOrderTraverse(void visit(const value_type &item)) const {
+void postOrderTraverse(void visit(const key_t &item)) const {
   if (!isEmpty()) {
     Node *curr = Root;
     std::stack<Node *> order;
