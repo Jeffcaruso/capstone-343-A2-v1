@@ -58,7 +58,8 @@ bool contains(const key_t &key) const {
 // takes a function that takes a single parameter of type T
 //template <class T>
 // value_t
-void inOrderTraverse(void visit(const typename iterator_traits<Node>::value_type &item)) const {
+//maybe key is ok, b/c this is using visit on the data...
+void inOrderTraverse(void visit(const key_t &item)) const {
   if (! isEmpty()) {
     Node *curr = Root;
     std::stack<Node *> order;
