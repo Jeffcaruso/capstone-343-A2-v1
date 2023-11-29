@@ -11,8 +11,8 @@ static int getHeight(const Node *n) {
   if (n == nullptr) {
     return 0;
   }
-  int left = getHeight(n->left);
-  int right = getHeight(n->right);
+  int left = getHeight(n->Left);
+  int right = getHeight(n->Right);
   if (left > right) {
     return left + 1;
   }
@@ -32,7 +32,7 @@ int sizeHelper(Node *node) const {
   if (node == nullptr) {
     return 0;
   }
-  return sizeHelper(node->left) + 1 + sizeHelper(node->right);
+  return sizeHelper(node->Left) + 1 + sizeHelper(node->Right);
 }
 
 
@@ -64,12 +64,12 @@ void inOrderTraverse(void visit(const value_type &item)) const {
     while (!order.empty() || curr != nullptr) {
       while (curr != nullptr) {
         order.push(curr);
-        curr = curr->left;
+        curr = curr->Left;
       }
       curr = order.top();
       order.pop();
       visit(curr->data);
-      curr = curr->right;
+      curr = curr->Right;
     }
   }
 }
@@ -88,10 +88,10 @@ void preOrderTraverse(void visit(const value_type &item)) const {
       visit(curr->data);
       order.pop();
       if (curr->right != nullptr) {
-        order.push(curr->right);
+        order.push(curr->Right);
       }
       if (curr->left != nullptr) {
-        order.push(curr->left);
+        order.push(curr->Left);
       }
     }
   }
@@ -111,17 +111,17 @@ void postOrderTraverse(void visit(const value_type &item)) const {
       curr = order.top();
       order.pop();
       order2.push(curr);
-      if (curr->left != nullptr) {
+      if (curr->Left != nullptr) {
         order.push(curr->left);
       }
-      if (curr->right != nullptr) {
-        order.push(curr->right);
+      if (curr->Right != nullptr) {
+        order.push(curr->Right);
       }
     }
     while (!order2.empty()) {
       curr = order2.top();
       order2.pop();
-      visit(curr->data);
+      visit(curr->Data);
     }
   }
 }
@@ -209,10 +209,10 @@ bool operator==(const BST &other) const {
         currTreeTemp->data.second != otherTreeTemp->data.second) {
       return false;
     }
-    currTree.push(currTreeTemp->left);
-    currTree.push(currTreeTemp->right);
-    otherTree.push(otherTreeTemp->left);
-    otherTree.push(otherTreeTemp->right);
+    currTree.push(currTreeTemp->Left);
+    currTree.push(currTreeTemp->Right);
+    otherTree.push(otherTreeTemp->Left);
+    otherTree.push(otherTreeTemp->Right);
   }
   return this->size() == other.size();
 }

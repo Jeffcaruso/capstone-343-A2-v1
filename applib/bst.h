@@ -51,8 +51,8 @@ private:
   // root of the tree
   Node *Root{nullptr};
 
-  // height of a Node, nullptr is 0, Root is 1, static, no access to 'this'
-  static int getHeight(const Node *N);
+  // // height of a Node, nullptr is 0, Root is 1, static, no access to 'this'
+  // static int getHeight(const Node *N);
 
   /**
    * print tree sideways with root on left
