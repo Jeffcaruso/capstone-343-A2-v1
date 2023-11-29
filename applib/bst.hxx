@@ -40,7 +40,8 @@ int sizeHelper(Node *node) const {
 
 // true if item is in BST
 //template <class T>
-bool contains(const key_type &key) const {
+// key_type
+bool contains(const key_t &key) const {
   Node *curr;
   curr = Root;
   while (curr != nullptr && curr->data.first != key) {
