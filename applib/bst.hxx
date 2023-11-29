@@ -167,15 +167,15 @@ void rebalance() {
 //template <class T>
 void clear()
 {
-    clearHelper(this.Root);
-    this.Root = nullptr;
+    clearHelper(this->Root);
+    this->Root = nullptr;
 }
 
 //template <class T>
 void clearHelper(Node *curr) {
   if (curr != nullptr) {
-    clearHelper(curr->left);
-    clearHelper(curr->right);
+    clearHelper(curr->Left);
+    clearHelper(curr->Right);
     delete curr;
   }
 }
