@@ -196,13 +196,13 @@ public:
 
   // inorder traversal: left-root-right
   // takes a function that takes a single parameter of type T
-  void inOrderTraverse(void Visit(const T &Item)) const {}
+  void inOrderTraverse(void Visit(const T &Item)) const; //{}
 
   // preorder traversal: root-left-right
-  void preOrderTraverse(void Visit(const T &Item)) const {}
+  void preOrderTraverse(void Visit(const T &Item)) const;// {}
 
   // postorder traversal: left-right-root
-  void postOrderTraverse(void Visit(const T &Item)) const {}
+  void postOrderTraverse(void Visit(const T &Item)) const; // {}
 
   // create dynamic array (not a vector)
   // copy all the items to the array
