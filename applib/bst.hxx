@@ -30,7 +30,7 @@ static int getHeight(const Node *n)
 // template <class T>
 int numberOfNodes() { return sizeHelper(Root); }
 
-int size(Node *node) const
+int size() const
 {
 	//need to actually do this in the true solution...
 	return 1;
@@ -301,8 +301,8 @@ bool operator==(const BST &other) const
 		{
 			return false;
 		}
-		if (currTreeTemp->data.first != otherTreeTemp->data.first ||
-			currTreeTemp->data.second != otherTreeTemp->data.second)
+		if (currTreeTemp->Data.first != otherTreeTemp->Data.first ||
+			currTreeTemp->Data.second != otherTreeTemp->Data.second)
 		{
 			return false;
 		}
