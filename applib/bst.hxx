@@ -224,8 +224,8 @@ void clearHelper(Node *curr)
 // Note T is value to insert...
 bool add(const T &Item)
 {
-    if (! Root ) {
- 
+    if (! Root ) 
+	{ 
         // Insert the first node, if root is NULL.
 		Root = Node(Item);
         return true;
@@ -301,8 +301,8 @@ bool operator==(const BST &other) const
 		{
 			return false;
 		}
-		if (currTreeTemp->Data.Left != otherTreeTemp->Data.Left ||
-			currTreeTemp->Data.Right != otherTreeTemp->Data.Right)
+		if (currTreeTemp->Data != otherTreeTemp->Data ||
+			currTreeTemp->Data != otherTreeTemp->Data )
 		{
 			return false;
 		}
