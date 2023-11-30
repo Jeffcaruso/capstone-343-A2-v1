@@ -3,8 +3,8 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 cc_library(
   name = "APPLib",
   visibility = ["//visibility:public"],
-  hdrs = glob(["**/*.h"]),
-  #srcs = glob(["largenum.cpp"]),  # can add other files if needed. But don't want building.cpp! *See description*
+  hdrs = glob(["**/*.h", "bst.hxx"]),
+  #srcs = glob([""]),  # can add other files if needed. But don't want building.cpp! *See description*
 )
 
 # Description
