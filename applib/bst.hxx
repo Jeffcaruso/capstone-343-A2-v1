@@ -301,8 +301,8 @@ bool operator==(const BST &other) const
 		{
 			return false;
 		}
-		if (currTreeTemp->Data.first != otherTreeTemp->Data.first ||
-			currTreeTemp->Data.second != otherTreeTemp->Data.second)
+		if (currTreeTemp->Data.Left != otherTreeTemp->Data.Left ||
+			currTreeTemp->Data.Right != otherTreeTemp->Data.Right)
 		{
 			return false;
 		}
