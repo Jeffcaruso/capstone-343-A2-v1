@@ -159,7 +159,7 @@ public:
   BST() {}
 
   // constructor, tree with root
-  explicit BST(const T &RootItem) {this.Root = Node(RootItem); }
+  explicit BST(const T &RootItem) {Root = Node(RootItem); }
 
   // given an array of length n
   // create a tree to have all items in that array
