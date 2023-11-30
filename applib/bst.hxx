@@ -1,4 +1,9 @@
-// @todo : update this to have the standard top of file description
+//============================================================================
+// Name        : Test1
+// File Desc.  : Write detailed method implementations
+// Author(s)   : Yusuf Pisan pisan@uw.edu, Jeffrey Caruso
+// Date    	   : Fall 2023
+//============================================================================
 
 // Included by bst.h (this is a header because of template usage...)
 // INCLUDES SHOULD BE IN BST.H!!!
@@ -211,10 +216,10 @@ void clearHelper(Node *curr)
 // Note T is value to insert...
 bool add(const T &Item)
 {
-    if (!this->Root) {
+    if (! Root ) {
  
         // Insert the first node, if root is NULL.
-		this.Root = Node(Item);
+		Root = Node(Item);
         return true;
     }
 	else
@@ -237,18 +242,17 @@ bool add(const T &Item)
  
     //     // Process left nodes.
     //     Item->left = Insert(Item->left, value);
-    // }
- 
+    // } 
     // return true;
 }
 
 // remove item, return true if successful
 bool remove(const T &Item)
 {
-	if (!this->Root->Data == Item) {
+	if (Root->Data == Item) {
  
         // Insert the first node, if root is NULL.
-		this.Root = Node(Item);
+		Root = Node(Item);
         return true;
     }
 	else
