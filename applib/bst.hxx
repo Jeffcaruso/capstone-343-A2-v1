@@ -30,6 +30,14 @@ static int getHeight(const Node *n)
 // template <class T>
 int numberOfNodes() { return sizeHelper(Root); }
 
+int size(Node *node) const
+{
+	//need to actually do this in the true solution...
+	return 1;
+
+	//would eventually use sizeHelper...
+}
+
 // gets size recursively
 // template <class T>
 int sizeHelper(Node *node) const
