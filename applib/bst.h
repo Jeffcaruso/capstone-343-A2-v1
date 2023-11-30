@@ -159,7 +159,7 @@ public:
   BST() {}
 
   // constructor, tree with root
-  explicit BST(const T &RootItem) {this.Root = RootItem; }
+  explicit BST(const T &RootItem) {this.Root = Node(RootItem); }
 
   // given an array of length n
   // create a tree to have all items in that array
@@ -185,12 +185,12 @@ public:
   // Number of nodes in BST
   int numberOfNodes() const;
 
-  // add a new item, return true if successful
-  // return false if the item is a duplicate
-  bool add(const T &Item) { return true; }
+  // // add a new item, return true if successful
+  // // return false if the item is a duplicate
+  // bool add(const T &Item) { return true; }
 
-  // remove item, return true if successful
-  bool remove(const T &Item) { return true; }
+  // // remove item, return true if successful
+  // bool remove(const T &Item) { return true; }
 
   // true if item is in BST
   bool contains(const T &Item) const { return true; }
