@@ -83,16 +83,23 @@ void visitorSimple(const T &Item)
 TEST(Test1, TestEquality)
 {
 	//B1
-	BST<string> B1();
-	BST<string> B2();
-	BST<string> B3();
+	BST<string> B1;
+	BST<string> B2;
+	BST<string> B3;
 
 	//test equality operators
 	EXPECT_TRUE(B1 == B2 && (!(B1 != B2)));
 	//add letters
-	B1.add("c");
-	B2.add("c");
-	B3.add("b");
+	string letterToAdd = "c";
+	B1.add(letterToAdd);
+	B2.add(letterToAdd);
+	letterToAdd = "b";
+	B3.add(letterToAdd);
+
+
+	// B1.add("c");
+	// B2.add("c");
+	// B3.add("b");
 
 	// testing equality
 	EXPECT_TRUE(B1 == B2 && (!(B1 != B2)));
