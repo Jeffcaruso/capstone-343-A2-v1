@@ -91,10 +91,10 @@ TEST(Test1, TestEquality)
 	EXPECT_TRUE(B1 == B2 && (!(B1 != B2)));
 	//add letters
 	string letterToAdd = "c";
-	B1.add((string)"c");
-	B2.add((string)"c");
+	B1.add(&(*(const string)"c"));
+	B2.add(&(*(const string)"c"));
 	letterToAdd = "b";
-	B3.add((string)"b");
+	B3.add(&(*(const string)"b"));
 
 
 	// B1.add("c");
