@@ -49,9 +49,9 @@ private:
 		struct Node *Left;
 		struct Node *Right;
 
-		Node(const T *info)
+		Node(const T info)
 		{
-			Data = *info;
+			Data = info;
 		}
 	};
 
