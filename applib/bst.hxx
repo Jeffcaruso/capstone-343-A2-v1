@@ -140,7 +140,7 @@ void postOrderTraverse(void visit(const key_t &item)) const
 			order2.push(curr);
 			if (curr->Left != nullptr)
 			{
-				order.push(curr->left);
+				order.push(curr->Left);
 			}
 			if (curr->Right != nullptr)
 			{

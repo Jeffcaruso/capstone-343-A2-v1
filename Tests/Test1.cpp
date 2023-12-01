@@ -82,9 +82,10 @@ void visitorSimple(const T &Item)
 // Testing ==
 TEST(Test1, TestEquality)
 {
-	BST<string> B1;
-	BST<string> B2;
-	BST<string> B3;
+	//B1
+	BST<string> B1();
+	BST<string> B2();
+	BST<string> B3();
 
 	//test equality operators
 	EXPECT_TRUE(B1 == B2 && (!(B1 != B2)));
