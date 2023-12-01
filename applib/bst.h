@@ -53,6 +53,7 @@ private:
 		{
 			Data = info;
 		}
+		
 	};
 
 	// refer to data type "struct Node" as Node
