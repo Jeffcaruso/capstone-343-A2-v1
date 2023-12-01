@@ -51,7 +51,9 @@ private:
 
 		Node(const T info)
 		{
-			Node *n = new Node{ Data = info.Data; Left = nullptr; Right = nullptr;}
+			Node *n = new Node{ Data = info.Data, 
+			Left = nullptr,
+			Right = nullptr};
 			return n;
 			//Data = info;
 			
