@@ -51,7 +51,7 @@ private:
 
 		Node(const T *info)
 		{
-			Data = info;
+			Data = *info;
 		}
 	};
 
