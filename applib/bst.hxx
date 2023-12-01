@@ -227,7 +227,8 @@ bool add(const T &Item)
     if (! Root ) 
 	{ 
         // Insert the first node, if root is NULL.
-		Root = Node(Item);
+		Node *n = new Node(Item);
+		Root = n;
         return true;
     }
 	else
