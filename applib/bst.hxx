@@ -90,7 +90,7 @@ void inOrderTraverse(void visit(const key_t &item)) const
 			}
 			curr = order.top();
 			order.pop();
-			visit(curr->data);
+			visit(curr->Data);
 			curr = curr->Right;
 		}
 	}
