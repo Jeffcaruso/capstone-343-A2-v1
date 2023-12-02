@@ -100,7 +100,7 @@ void inOrderTraverse(void visit(const T &item)) const
 // preorder traversal: root-left-right
 // review vlaue_type...? may not be right thing...
 // template <class T>
-void preOrderTraverse(void visit(const key_t &item)) const
+void preOrderTraverse(void visit(const T &item)) const
 {
 	if (!isEmpty())
 	{
@@ -126,7 +126,7 @@ void preOrderTraverse(void visit(const key_t &item)) const
 
 // postorder traversal: left-right-root
 // template <class T>
-void postOrderTraverse(void visit(const key_t &item)) const
+void postOrderTraverse(void visit(const T &item)) const
 {
 	if (!isEmpty())
 	{
