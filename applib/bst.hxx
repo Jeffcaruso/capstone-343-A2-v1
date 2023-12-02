@@ -109,13 +109,13 @@ void preOrderTraverse(void visit(const key_t &item)) const
 		while (!order.empty())
 		{
 			curr = order.top();
-			visit(curr->data);
+			visit(curr->Data);
 			order.pop();
-			if (curr->right != nullptr)
+			if (curr->Right != nullptr)
 			{
 				order.push(curr->Right);
 			}
-			if (curr->left != nullptr)
+			if (curr->Left != nullptr)
 			{
 				order.push(curr->Left);
 			}
