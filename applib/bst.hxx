@@ -75,7 +75,8 @@ bool contains(const key_t &key) const
 
 // maybe key is ok, b/c this is using visit on the data...
 //  used to be (const value_type &item)
-void inOrderTraverse(void visit(const key_t &item)) const
+//template<class T>
+void inOrderTraverse(void visit(const T &item)) const
 {
 	if (!isEmpty())
 	{
