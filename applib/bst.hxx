@@ -51,7 +51,12 @@ int sizeHelper(Node *node) const
 
 // true if item is in BST
 // template <class T>
-bool contains(const key_t &key) const
+//Not sure, may end up wanting to swap this for const T &key...
+//2 options:
+//const key_t &key
+//const T &key
+
+bool contains(const T &key) const
 {
 	Node *curr;
 	curr = Root;
