@@ -182,7 +182,7 @@ public:
 	BST() {Root = nullptr;}
 
 	// constructor, tree with root
-	explicit BST(const T &RootItem) { Node *n = new Node(RootItem); Root = n; }
+	explicit BST(const T &RootItem) { Node *n = new Node(RootItem); n->Left = nullptr; n->Right = nullptr; Root = n; }
 
 	// given an array of length n
 	// create a tree to have all items in that array
