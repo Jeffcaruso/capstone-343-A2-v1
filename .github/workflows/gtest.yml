@@ -22,9 +22,11 @@ jobs:
       run: sudo npm install -g @bazel/bazelisk
     - uses: actions/checkout@v1
     - name: g++ compilation
-      run:  g++ -g -std=c++17 -Wall -Wextra -Wno-sign-compare building.cpp
+      run:  g++ -g -std=c++17 -Wall -Wextra -Wno-sign-compare -o bld.out building.cpp
     - name: clang tidy build
       run: clang++ -g -std=c++17 -Wall -Wextra -Wno-sign-compare building.cpp
+    - name: run it
+      run: valgrind bld.out --leak-check=full --errors-for-leak-kinds=definite --error-exitcode=3
 
   Run_Test_1:
     needs: build
