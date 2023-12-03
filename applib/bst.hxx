@@ -225,7 +225,7 @@ void clearHelper(Node *curr)
 // Note T is value to insert...
 bool add(const T &Item)
 {
-    if (! Root ) 
+    if (Root == nullptr) 
 	{ 
         // Insert the first node, if root is NULL.
 		Node *n = new Node(Item);
