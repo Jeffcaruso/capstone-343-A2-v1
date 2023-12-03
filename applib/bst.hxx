@@ -203,8 +203,11 @@ void rebalance()
 // template <class T>
 void clear()
 {
-	clearHelper(Root);
-	Root = nullptr;
+	if (Root != nullptr)
+	{
+		clearHelper(Root);
+		Root = nullptr;
+	}
 }
 
 // template <class T>
