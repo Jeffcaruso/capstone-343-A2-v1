@@ -26,7 +26,7 @@ jobs:
     - name: clang tidy build
       run: clang++ -g -std=c++17 -Wall -Wextra -Wno-sign-compare building.cpp
     - name: run it
-      run: valgrind bld.out --leak-check=full --errors-for-leak-kinds=definite --error-exitcode=3
+      run: /usr/bin/valgrind bld.out --leak-check=full --errors-for-leak-kinds=definite --error-exitcode=3
 
   Run_Test_1:
     needs: build
