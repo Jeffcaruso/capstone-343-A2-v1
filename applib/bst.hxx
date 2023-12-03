@@ -277,6 +277,10 @@ bool remove(const T &Item)
 // template <class T>
 bool operator==(const BST &other) const
 {
+	if(other == nullptr)
+	{
+		return false;
+	}
 	if (isEmpty() && other.isEmpty())
 	{
 		return true;
