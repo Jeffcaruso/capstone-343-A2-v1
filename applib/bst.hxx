@@ -213,12 +213,16 @@ void clear()
 // template <class T>
 void clearHelper(Node *curr)
 {
-	if (curr != nullptr)
+	// if(curr == nullptr)
+	// {
+	// 	return;
+	// }
+	// clearHelper(curr->Left);
+	// clearHelper(curr->Right);
+	if(curr)
 	{
 		clearHelper(curr->Left);
 		clearHelper(curr->Right);
-		delete curr;
-		return;
 	}
 	return;
 }
