@@ -46,8 +46,8 @@ private:
 	struct Node
 	{
 		T Data;
-		struct Node *Left;
-		struct Node *Right;
+		struct Node *Left = nullptr;
+		struct Node *Right = nullptr;
 
 		Node(const T info)
 		{
