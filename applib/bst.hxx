@@ -223,6 +223,7 @@ void clearHelper(Node *curr)
 	{
 		clearHelper(curr->Left);
 		clearHelper(curr->Right);
+		delete curr;
 	}
 	return;
 }
