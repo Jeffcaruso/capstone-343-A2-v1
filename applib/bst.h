@@ -60,7 +60,7 @@ private:
 	using Node = struct Node;
 
 	// root of the tree
-	Node *Root; //{nullptr};
+	Node *Root = nullptr; //{nullptr};
 
 	// // height of a Node, nullptr is 0, Root is 1, static, no access to 'this'
 	// static int getHeight(const Node *N);

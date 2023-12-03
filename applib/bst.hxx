@@ -224,6 +224,7 @@ void clearHelper(Node **curr)
 			clearHelper(&((*curr)->Right));
 		}
 		delete *curr;
+		curr = nullptr;
 	}
 	return;
 }
