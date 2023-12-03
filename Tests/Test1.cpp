@@ -90,7 +90,10 @@ TEST(Test1, TestEquality)
 	//test equality operators
 	
 	//for now, I want to see if the add method works, re-comment this later...
-	//EXPECT_TRUE(B1 == B2 && (!(B1 != B2)));
+	//didn't seem to help much removing this
+	//looking to add -g to see what I can do.
+	//Might need to modify build + building.cpp to see how stuff works there where I can set a -g
+	EXPECT_TRUE(B1 == B2 && (!(B1 != B2)));
 
 
 	//add letters
