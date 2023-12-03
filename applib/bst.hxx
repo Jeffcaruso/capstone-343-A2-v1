@@ -205,13 +205,13 @@ void clear()
 {
 	if (Root != nullptr)
 	{
-		clearHelper(Root);
+		clearHelper(&Root);
 		Root = nullptr;
 	}
 }
 
 // template <class T>
-void clearHelper(Node *curr)
+void clearHelper(Node **curr)
 {
 	// if(curr == nullptr)
 	// {
@@ -219,10 +219,10 @@ void clearHelper(Node *curr)
 	// }
 	// clearHelper(curr->Left);
 	// clearHelper(curr->Right);
-	if(curr)
+	if((*curr) != nullptr)
 	{
-		clearHelper(curr->Left);
-		clearHelper(curr->Right);
+		clearHelper((*curr)->Left);
+		clearHelper((*curr)->Right);
 		delete curr;
 	}
 	return;
