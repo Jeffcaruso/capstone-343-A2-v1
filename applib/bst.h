@@ -60,7 +60,7 @@ private:
 	using Node = struct Node;
 
 	// root of the tree
-	Node *Root{nullptr};
+	Node *Root; //{nullptr};
 
 	// // height of a Node, nullptr is 0, Root is 1, static, no access to 'this'
 	// static int getHeight(const Node *N);
@@ -179,7 +179,7 @@ private:
 
 public:
 	// constructor, empty tree
-	BST() {}
+	BST() {Root = nullptr;}
 
 	// constructor, tree with root
 	explicit BST(const T &RootItem) { Node *n = new Node(RootItem); Root = n; }
