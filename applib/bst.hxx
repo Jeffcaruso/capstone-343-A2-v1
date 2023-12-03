@@ -234,6 +234,7 @@ void clearHelper(Node **curr)
 // add a new item, return true if successful
 // return false if the item is a duplicate
 // Note T is value to insert...
+/////// Next step, do a true add that will actually add new nodes...!!
 bool add(const T &Item)
 {
     if (Root == nullptr) 
