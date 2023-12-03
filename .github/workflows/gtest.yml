@@ -28,7 +28,7 @@ jobs:
     - name: Install Valgrind
       run:  sudo apt install -y valgrind
     - name: run it
-      run: /usr/bin/valgrind bld.out --leak-check=full --errors-for-leak-kinds=definite --error-exitcode=3
+      run: valgrind --leak-check=full --errors-for-leak-kinds=definite --error-exitcode=3 ./bld.out
 
   Run_Test_1:
     needs: build
