@@ -235,12 +235,9 @@ void clearHelper(Node **curr)
 // return false if the item is a duplicate
 // Note T is value to insert...
 /////// Next step, do a true add that will actually add new nodes...!!
-bool add(const T &Item, Node *n) //default root
+bool add(const T &Item) //default root
 {
-	if(n == nullptr)
-	{
-		n = Root;
-	}
+	Node *n = Root;
 
 	rAdd(Item, &n);
 
