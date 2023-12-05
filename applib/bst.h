@@ -193,7 +193,7 @@ public:
 	BST(const T Arr[], int N) {}
 
 	// copy constructor
-	BST(const BST<T> &Bst) {}
+	BST(const BST<T> &Bst)
 
 	// destructor
 	virtual ~BST() { clear(); }

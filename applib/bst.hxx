@@ -366,6 +366,30 @@ bool remove(const T &Item)
 	}
 }
 
+
+BST(const BST<T> &Bst)
+{
+	//add root
+	//Root = new Node(Bst->Root->Data);
+	Node *copyThis = Bst->Root;
+	Node *newTree = Root;
+
+	Root = rCC(&copyThis, &newTree);
+	
+	return newTree;
+
+}
+
+Node * rCC(Node **copyThis, Node **newTree)
+{
+	(*newTree)->Data = new Node((*copyThis)->Data);
+
+	return rCC(&((*copyThis)->Left), &((*newTree)->Left));
+	return rCC(&((*copyThis)->Right), &((*newTree)->Right));
+
+	return newTree;
+}
+
 // trees are equal if they have the same structure
 // AND the same item values at all the nodes
 // template <class T>
