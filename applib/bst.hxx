@@ -372,7 +372,11 @@ BST(const BST<T> &Bst)
 	//add root
 	//Root = new Node(Bst->Root->Data);
 	Node *copyThis = Bst.Root;
-	Node *newTree = Root;
+	//Node *newTree = Root;
+
+	Node *newTree = new Node(Bst.Root->Data);
+
+	Root = newTree;
 
 	//Root = rCC(&copyThis, &newTree);
 	rCC(&copyThis, &newTree);
@@ -383,7 +387,12 @@ BST(const BST<T> &Bst)
 
 void rCC(Node **copyThis, Node **newTree)
 {
-	(*newTree) = new Node((*copyThis)->Data);
+	//impact is when it starts at populated root, it skips this...
+	if(newTree == nullptr)
+	{
+		(*newTree) = new Node((*copyThis)->Data);
+	}
+	
 
 	return rCC(&((*copyThis)->Left), &((*newTree)->Left));
 	return rCC(&((*copyThis)->Right), &((*newTree)->Right));
