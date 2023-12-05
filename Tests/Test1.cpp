@@ -111,5 +111,5 @@ TEST(Test1, TestEquality)
 	// testing equality
 	EXPECT_TRUE(B1 == B2 && (!(B1 != B2)));
 	// testing equality
-	EXPECT_TRUE(B1 != B2 && (!(B1 == B3)));
+	EXPECT_TRUE(B1 != B3 && (!(B1 == B3)));
 }
