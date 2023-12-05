@@ -327,12 +327,12 @@ bool rAdd(const T &Item, Node **n)
 		if (Item < (*n)->Data)
 		{
 			// go left
-			return rAdd(Item, (*n)->Left);
+			return rAdd(Item, &((*n)->Left));
 		}
 		else
 		{
 			// go right
-			return rAdd(Item, (*n)->Right);
+			return rAdd(Item, &((*n)->Right));
 		}
 	}
 	return false;
