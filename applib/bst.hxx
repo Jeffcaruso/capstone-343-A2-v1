@@ -237,9 +237,21 @@ void clearHelper(Node **curr)
 /////// Next step, do a true add that will actually add new nodes...!!
 bool add(const T &Item) //default root
 {
+	bool setRoot = false;
+	if(Root == nullptr)
+	{
+		setRoot = true;
+	}
 	Node *n = Root;
 
-	return rAdd(Item, &n);
+	bool ok = rAdd(Item, &n);
+
+	if(setRoot)
+	{
+		Root = n;
+	}
+
+	return ok;
 
     // if (Root == nullptr) 
 	// { 
