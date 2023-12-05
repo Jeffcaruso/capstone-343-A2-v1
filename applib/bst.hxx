@@ -235,8 +235,15 @@ void clearHelper(Node **curr)
 // return false if the item is a duplicate
 // Note T is value to insert...
 /////// Next step, do a true add that will actually add new nodes...!!
-bool add(const T &Item, Node *n = Root) //default root
+bool add(const T &Item, Node *n) //default root
 {
+	if(n == nullptr)
+	{
+		n = Root;
+	}
+
+	rAdd(Item, &n);
+
     // if (Root == nullptr) 
 	// { 
     //     // Insert the first node, if root is NULL.
@@ -249,48 +256,48 @@ bool add(const T &Item, Node *n = Root) //default root
 	// 	Node *n = new Node(Item);
 	// }
 
-	if(n == nullptr)
-	{
-		Node *nn = new Node(Item);
-		n = nn;
-		return true;
-	}
-	else
-	{
-		if(Item < n->Data)
-		{
-			//go left
-			add(Item, n->Left);
-		}
-		else
-		{
-			//go right
-			add(Item, n->Right);
-		}
-	}
+	// if(n == nullptr)
+	// {
+	// 	Node *nn = new Node(Item);
+	// 	n = nn;
+	// 	return true;
+	// }
+	// else
+	// {
+	// 	if(Item < n->Data)
+	// 	{
+	// 		//go left
+	// 		add(Item, n->Left);
+	// 	}
+	// 	else
+	// 	{
+	// 		//go right
+	// 		add(Item, n->Right);
+	// 	}
+	// }
 
 
 
-	else
-	{
-		// Insert data.
-		if (Item > Item->data)
-		{
-			// Insert right node data, if the 'value'
-			// to be inserted is greater than 'root' node data.
+	// else
+	// {
+	// 	// Insert data.
+	// 	if (Item > Item->data)
+	// 	{
+	// 		// Insert right node data, if the 'value'
+	// 		// to be inserted is greater than 'root' node data.
 
-			// Process right nodes.
-			Insert(Item->right, Item);
-		}
-		else if (Item < Item->data)
-		{
-			// Insert left node data, if the 'value'
-			// to be inserted is smaller than 'root' node data.
+	// 		// Process right nodes.
+	// 		Insert(Item->right, Item);
+	// 	}
+	// 	else if (Item < Item->data)
+	// 	{
+	// 		// Insert left node data, if the 'value'
+	// 		// to be inserted is smaller than 'root' node data.
 
-			// Process left nodes.
-			Insert(Item->left, Item);
-		}
-	}
+	// 		// Process left nodes.
+	// 		Insert(Item->left, Item);
+	// 	}
+	// }
  
     // // Insert data.
     // if (value > Item->data) {
@@ -308,6 +315,29 @@ bool add(const T &Item, Node *n = Root) //default root
     //     Item->left = Insert(Item->left, value);
     // } 
     // return true;
+}
+
+bool rAdd(const T &Item, Node **n)
+{
+	if ((*n) == nullptr)
+	{
+		Node *nn = new Node(Item);
+		(*n) = nn;
+		return true;
+	}
+	else
+	{
+		if (Item < (*n)->Data)
+		{
+			// go left
+			add(Item, (*n)->Left);
+		}
+		else
+		{
+			// go right
+			add(Item, (*n)->Right);
+		}
+	}
 }
 
 // remove item, return true if successful
