@@ -371,7 +371,7 @@ BST(const BST<T> &Bst)
 {
 	//add root
 	//Root = new Node(Bst->Root->Data);
-	Node *copyThis = Bst->Root;
+	Node *copyThis = Bst.Root;
 	Node *newTree = Root;
 
 	Root = rCC(&copyThis, &newTree);
