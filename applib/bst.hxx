@@ -235,19 +235,61 @@ void clearHelper(Node **curr)
 // return false if the item is a duplicate
 // Note T is value to insert...
 /////// Next step, do a true add that will actually add new nodes...!!
-bool add(const T &Item)
+bool add(const T &Item, Node *n = Root) //default root
 {
-    if (Root == nullptr) 
-	{ 
-        // Insert the first node, if root is NULL.
-		Node *n = new Node(Item);
-		Root = n;
-        return true;
-    }
+    // if (Root == nullptr) 
+	// { 
+    //     // Insert the first node, if root is NULL.
+	// 	Node *n = new Node(Item);
+	// 	Root = n;
+    //     return true;
+    // }
+	// if(n == nullptr)
+	// {
+	// 	Node *n = new Node(Item);
+	// }
+
+	if(n == nullptr)
+	{
+		Node *nn = new Node(Item);
+		n = nn;
+		return true;
+	}
 	else
 	{
-		//Actual BST insert...
-		return false;
+		if(Item < n->Data)
+		{
+			//go left
+			add(Item, n->Left);
+		}
+		else
+		{
+			//go right
+			add(Item, n->Right);
+		}
+	}
+
+
+
+	else
+	{
+		// Insert data.
+		if (Item > Item->data)
+		{
+			// Insert right node data, if the 'value'
+			// to be inserted is greater than 'root' node data.
+
+			// Process right nodes.
+			Insert(Item->right, Item);
+		}
+		else if (Item < Item->data)
+		{
+			// Insert left node data, if the 'value'
+			// to be inserted is smaller than 'root' node data.
+
+			// Process left nodes.
+			Insert(Item->left, Item);
+		}
 	}
  
     // // Insert data.
