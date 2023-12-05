@@ -239,7 +239,7 @@ bool add(const T &Item) //default root
 {
 	Node *n = Root;
 
-	rAdd(Item, &n);
+	return rAdd(Item, &n);
 
     // if (Root == nullptr) 
 	// { 
@@ -327,14 +327,15 @@ bool rAdd(const T &Item, Node **n)
 		if (Item < (*n)->Data)
 		{
 			// go left
-			add(Item, (*n)->Left);
+			return rAdd(Item, (*n)->Left);
 		}
 		else
 		{
 			// go right
-			add(Item, (*n)->Right);
+			return rAdd(Item, (*n)->Right);
 		}
 	}
+	return false;
 }
 
 // remove item, return true if successful
