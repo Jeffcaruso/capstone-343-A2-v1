@@ -382,12 +382,12 @@ BST(const BST<T> &Bst)
 
 Node * rCC(Node **copyThis, Node **newTree)
 {
-	(*newTree)->Data = new Node((*copyThis)->Data);
+	(*newTree) = new Node((*copyThis)->Data);
 
 	return rCC(&((*copyThis)->Left), &((*newTree)->Left));
 	return rCC(&((*copyThis)->Right), &((*newTree)->Right));
 
-	return newTree;
+	return *newTree;
 }
 
 // trees are equal if they have the same structure
