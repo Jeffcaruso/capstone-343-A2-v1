@@ -374,20 +374,21 @@ BST(const BST<T> &Bst)
 	Node *copyThis = Bst.Root;
 	Node *newTree = Root;
 
-	Root = rCC(&copyThis, &newTree);
-	
+	//Root = rCC(&copyThis, &newTree);
+	rCC(&copyThis, &newTree);
+
 	//return newTree;
 
 }
 
-Node * rCC(Node **copyThis, Node **newTree)
+void rCC(Node **copyThis, Node **newTree)
 {
 	(*newTree) = new Node((*copyThis)->Data);
 
 	return rCC(&((*copyThis)->Left), &((*newTree)->Left));
 	return rCC(&((*copyThis)->Right), &((*newTree)->Right));
 
-	return *newTree;
+	//return *newTree;
 }
 
 // trees are equal if they have the same structure
