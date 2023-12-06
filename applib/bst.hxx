@@ -203,32 +203,42 @@ void rebalance()
 // template <class T>
 void clear()
 {
-	if (Root != nullptr)
-	{
-		clearHelper(&Root);
-		Root = nullptr;
-	}
+	clearHelper(Root);
+	// Node *n = Root;
+	// if (Root != nullptr)
+	// {
+	// 	clearHelper(n);
+	// 	Root = nullptr;
+	// }
 }
 
 // template <class T>
-void clearHelper(Node **curr)
+void clearHelper(Node *curr)
 {
-	if((*curr) != nullptr)
+	if(curr)
 	{
-		if(((*curr)->Left) != nullptr)
-		{
-			clearHelper(&((*curr)->Left));
-		}
-		if(((*curr)->Right) != nullptr)
-		{
-			clearHelper(&((*curr)->Right));
-		}
-		delete (*curr);
-		(*curr) = nullptr;
-		curr = nullptr;
-		return;
+		clearHelper(curr->Left);
+		clearHelper(curr->Right);
+		delete curr;
 	}
-	return;
+	
+
+	// if((*curr) != nullptr)
+	// {
+	// 	if(((*curr)->Left) != nullptr)
+	// 	{
+	// 		clearHelper(&((*curr)->Left));
+	// 	}
+	// 	if(((*curr)->Right) != nullptr)
+	// 	{
+	// 		clearHelper(&((*curr)->Right));
+	// 	}
+	// 	delete (*curr);
+	// 	(*curr) = nullptr;
+	// 	curr = nullptr;
+	// 	return;
+	// }
+	// return;
 }
 
 
