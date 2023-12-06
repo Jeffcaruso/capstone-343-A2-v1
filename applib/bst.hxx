@@ -398,6 +398,8 @@ BST(const BST<T> &Bst)
 	//Root = rCC(&copyThis, &newTree);
 	rCC(&copyThis, &newTree);
 
+	Root = newTree;
+
 	//return newTree;
 
 }
