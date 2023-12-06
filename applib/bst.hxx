@@ -25,17 +25,11 @@ static int getHeight(const Node *n)
 	return right + 1;
 }
 
-// Number of nodes in BST
+// Number of nodes in the BST.
 int numberOfNodes() { return sizeHelper(Root); }
 
-int size() const
-{
-	// return 1;
-
-	// return numberOfNodes();
-
-	return sizeHelper(Root);
-}
+//also gets # of nodes in the BST.
+int size() const { return sizeHelper(Root); }
 
 // gets size recursively
 int sizeHelper(Node *node) const
