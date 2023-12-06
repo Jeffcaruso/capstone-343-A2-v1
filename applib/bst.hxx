@@ -203,11 +203,11 @@ void rebalance()
 // template <class T>
 void clear()
 {
-	if(Root == nullptr)
+	if(Root)
 	{
-		return;
+		clearHelper(Root);
 	}
-	clearHelper(Root);
+	
 	// Node *n = Root;
 	// if (Root != nullptr)
 	// {
