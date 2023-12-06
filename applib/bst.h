@@ -221,7 +221,8 @@ public:
 	// bool remove(const T &Item) { return true; }
 
 	// true if item is in BST
-	bool contains(const T &Item) const { return true; }
+	//bool contains(const T &Item) const { return true; }
+	bool contains(const T &Item) const;
 
 	// // inorder traversal: left-root-right
 	// // takes a function that takes a single parameter of type T
