@@ -30,6 +30,8 @@ int numberOfNodes() { return sizeHelper(Root); }
 
 int size() const
 {
+	return 1;
+	
 	return numberOfNodes();
 }
 
