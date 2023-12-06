@@ -197,8 +197,8 @@ public:
 	// NOLINTNEXTLINE
 	BST(const T Arr[], int N) {}
 
-	// // copy constructor
-	// BST(const BST<T> &Bst);
+	// copy constructor
+	BST(const BST<T> &Bst);
 
 	// destructor
 	virtual ~BST() { clear(); }
