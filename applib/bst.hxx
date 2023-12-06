@@ -392,12 +392,12 @@ void rCC(Node **copyThis, Node **newTree)
 	//impact is when it starts at populated root, it skips this...
 	if(copyThis == nullptr)
 	{
+		newTree = nullptr;
 		return;
 	}
-	if(newTree == nullptr)
-	{
-		(*newTree) = new Node((*copyThis)->Data);
-	}
+
+	//Create node
+	(*newTree) = new Node((*copyThis)->Data);
 	
 	//shouldn't really need these if blocks, but just in case that is what is causing the problem
 	if((*copyThis)->Left != nullptr)
