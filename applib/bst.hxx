@@ -215,7 +215,7 @@ void clear()
 // template <class T>
 void clearHelper(Node *curr)
 {
-	if(curr)
+	if(curr != nullptr)
 	{
 		clearHelper(curr->Left);
 		clearHelper(curr->Right);
