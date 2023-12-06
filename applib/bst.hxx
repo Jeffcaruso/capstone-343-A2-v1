@@ -6,7 +6,7 @@
 //============================================================================
 
 // Included by bst.h (this is a header because of template usage...)
-// INCLUDES SHOULD BE IN BST.H!!!
+// INCLUDES (headers) SHOULD BE IN BST.H!!!
 
 // height of a Node, nullptr is 0, root is 1, static, no access to 'this'
 // helper function to height(), used by printVertical
@@ -30,10 +30,7 @@ int numberOfNodes() { return sizeHelper(Root); }
 
 int size() const
 {
-	//need to actually do this in the true solution...
 	return numberOfNodes();
-
-	//would eventually use sizeHelper...
 }
 
 // gets size recursively
@@ -206,11 +203,8 @@ void clearHelper(Node *curr)
 	}
 }
 
-
 // add a new item, return true if successful
 // return false if the item is a duplicate
-// Note T is value to insert...
-/////// Next step, do a true add that will actually add new nodes...!!
 bool add(const T &Item) //default root
 {
 	bool setRoot = false;
@@ -222,7 +216,7 @@ bool add(const T &Item) //default root
 
 	bool ok = rAdd(Item, &n);
 
-	//if Root was initiall unset.
+	//if Root was initially unset.
 	if(setRoot)
 	{
 		Root = n;
@@ -272,7 +266,6 @@ bool remove(const T &Item)
 	}
 }
 
-
 BST(const BST<T> &Bst)
 {
 	//gather Root (Node *)
@@ -306,15 +299,12 @@ void rCC(Node **copyThis, Node **newTree)
 	{
 		rCC(&((*copyThis)->Right), &((*newTree)->Right));
 	}
-
 	
 	return;
-	//return *newTree;
 }
 
 // trees are equal if they have the same structure
 // AND the same item values at all the nodes
-// template <class T>
 bool operator==(const BST &other) const
 {
 	if (isEmpty() && other.isEmpty())
@@ -357,8 +347,4 @@ bool operator==(const BST &other) const
 }
 
 // not == to each other
-// template <class T>
 bool operator!=(const BST &other) const { return !(*this == other); }
-
-// template<class T>
-// bool BST<Node>::operator!=(const BST &other) const { return !(*this == other); }
