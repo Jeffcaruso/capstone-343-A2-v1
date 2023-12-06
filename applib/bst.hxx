@@ -388,6 +388,10 @@ BST(const BST<T> &Bst)
 void rCC(Node **copyThis, Node **newTree)
 {
 	//impact is when it starts at populated root, it skips this...
+	if(copyThis == nullptr)
+	{
+		return;
+	}
 	if(newTree == nullptr)
 	{
 		(*newTree) = new Node((*copyThis)->Data);
