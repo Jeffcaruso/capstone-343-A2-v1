@@ -386,18 +386,16 @@ bool remove(const T &Item)
 
 BST(const BST<T> &Bst)
 {
-	//add root
-	//Root = new Node(Bst->Root->Data);
+	//gather Root (Node *)
 	Node *copyThis = Bst.Root;
-	//Node *newTree = Root;
 
-	Node *newTree; // = new Node(Bst.Root->Data);
-
-	Root = newTree;
+	Node *newTree;
+	//Root = newTree;
 
 	//Root = rCC(&copyThis, &newTree);
 	rCC(&copyThis, &newTree);
 
+	//saving the root
 	Root = newTree;
 
 	//return newTree;
@@ -406,7 +404,6 @@ BST(const BST<T> &Bst)
 
 void rCC(Node **copyThis, Node **newTree)
 {
-	//impact is when it starts at populated root, it skips this...
 	if(copyThis == nullptr)
 	{
 		newTree = nullptr;
@@ -436,10 +433,6 @@ void rCC(Node **copyThis, Node **newTree)
 // template <class T>
 bool operator==(const BST &other) const
 {
-	// if(other.Root == nullptr)
-	// {
-	// 	return false;
-	// }
 	if (isEmpty() && other.isEmpty())
 	{
 		return true;
