@@ -398,10 +398,8 @@ void rCC(Node **copyThis, Node **newTree)
 	}
 	
 
-	// return rCC(&((*copyThis)->Left), &((*newTree)->Left));
-	return rCC(copyThis->Left, newTree->Left);
-	// return rCC(&((*copyThis)->Right), &((*newTree)->Right));
-	return rCC(copyThis->Right, newTree->Right);
+	rCC(&((*copyThis)->Left), &((*newTree)->Left));
+	rCC(&((*copyThis)->Right), &((*newTree)->Right));
 	return;
 	//return *newTree;
 }
