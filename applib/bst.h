@@ -1,5 +1,10 @@
-// Yusuf Pisan pisan@uw.edu
-// 15 Jan 2018
+//============================================================================
+// Name        : BST declarations
+// File Desc.  : Write function declarations + implement trivial methods
+// Author(s)   : Yusuf Pisan pisan@uw.edu, Jeffrey Caruso jc12321@uw.edu
+// Date    	   : Fall 2023
+//============================================================================
+
 
 // BST class
 // Creates a BST to store values

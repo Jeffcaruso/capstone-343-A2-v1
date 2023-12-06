@@ -1,5 +1,5 @@
 //============================================================================
-// Name        : Test1
+// Name        : BST implementation
 // File Desc.  : Write detailed method implementations
 // Author(s)   : Yusuf Pisan pisan@uw.edu, Jeffrey Caruso
 // Date    	   : Fall 2023
