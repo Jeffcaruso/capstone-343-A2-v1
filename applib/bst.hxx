@@ -31,7 +31,7 @@ int numberOfNodes() { return sizeHelper(Root); }
 int size() const
 {
 	//need to actually do this in the true solution...
-	return 1;
+	return numberOfNodes();
 
 	//would eventually use sizeHelper...
 }
