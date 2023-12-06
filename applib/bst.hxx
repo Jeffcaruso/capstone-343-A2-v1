@@ -30,9 +30,11 @@ int numberOfNodes() { return sizeHelper(Root); }
 
 int size() const
 {
-	return 1;
-	
-	return numberOfNodes();
+	// return 1;
+
+	// return numberOfNodes();
+
+	return sizeHelper(Root);
 }
 
 // gets size recursively
