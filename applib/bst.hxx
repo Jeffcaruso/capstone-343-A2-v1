@@ -10,7 +10,6 @@
 
 // height of a Node, nullptr is 0, root is 1, static, no access to 'this'
 // helper function to height(), used by printVertical
-// template <class T>
 static int getHeight(const Node *n)
 {
 	if (n == nullptr)
@@ -27,7 +26,6 @@ static int getHeight(const Node *n)
 }
 
 // Number of nodes in BST
-// template <class T>
 int numberOfNodes() { return sizeHelper(Root); }
 
 int size() const
@@ -39,7 +37,6 @@ int size() const
 }
 
 // gets size recursively
-// template <class T>
 int sizeHelper(Node *node) const
 {
 	if (node == nullptr)
@@ -50,7 +47,6 @@ int sizeHelper(Node *node) const
 }
 
 // true if item is in BST
-// template <class T>
 bool contains(const key_t &key) const
 {
 	Node *curr;
@@ -71,11 +67,6 @@ bool contains(const key_t &key) const
 
 // inorder traversal: left-root-right
 // takes a function that takes a single parameter of type T
-// template <class T>
-
-// maybe key is ok, b/c this is using visit on the data...
-//  used to be (const value_type &item)
-//template<class T>
 void inOrderTraverse(void visit(const T &item)) const
 {
 	if (!isEmpty())
@@ -98,8 +89,6 @@ void inOrderTraverse(void visit(const T &item)) const
 }
 
 // preorder traversal: root-left-right
-// review vlaue_type...? may not be right thing...
-// template <class T>
 void preOrderTraverse(void visit(const T &item)) const
 {
 	if (!isEmpty())
@@ -125,7 +114,6 @@ void preOrderTraverse(void visit(const T &item)) const
 }
 
 // postorder traversal: left-right-root
-// template <class T>
 void postOrderTraverse(void visit(const T &item)) const
 {
 	if (!isEmpty())
@@ -159,7 +147,6 @@ void postOrderTraverse(void visit(const T &item)) const
 
 // balance the BST by saving all nodes to a vector inorder
 // and then recreating the BST from the vector
-// template <class T>
 void rebalance()
 {
 	if (Root != nullptr)
@@ -200,23 +187,14 @@ void rebalance()
 	}
 }
 
-// template <class T>
 void clear()
 {
 	if(Root)
 	{
 		clearHelper(Root);
 	}
-	
-	// Node *n = Root;
-	// if (Root != nullptr)
-	// {
-	// 	clearHelper(n);
-	// 	Root = nullptr;
-	// }
 }
 
-// template <class T>
 void clearHelper(Node *curr)
 {
 	if(curr != nullptr)
@@ -226,28 +204,9 @@ void clearHelper(Node *curr)
 		delete curr;
 		curr = nullptr;
 	}
-	
-
-	// if((*curr) != nullptr)
-	// {
-	// 	if(((*curr)->Left) != nullptr)
-	// 	{
-	// 		clearHelper(&((*curr)->Left));
-	// 	}
-	// 	if(((*curr)->Right) != nullptr)
-	// 	{
-	// 		clearHelper(&((*curr)->Right));
-	// 	}
-	// 	delete (*curr);
-	// 	(*curr) = nullptr;
-	// 	curr = nullptr;
-	// 	return;
-	// }
-	// return;
 }
 
 
-///////////////////////////////////////////////////////////NOTE: probably doesn't work properly yet.
 // add a new item, return true if successful
 // return false if the item is a duplicate
 // Note T is value to insert...
@@ -263,84 +222,14 @@ bool add(const T &Item) //default root
 
 	bool ok = rAdd(Item, &n);
 
+	//if Root was initiall unset.
 	if(setRoot)
 	{
 		Root = n;
 	}
 
+	//return if it was added successfully. expect true.
 	return ok;
-
-    // if (Root == nullptr) 
-	// { 
-    //     // Insert the first node, if root is NULL.
-	// 	Node *n = new Node(Item);
-	// 	Root = n;
-    //     return true;
-    // }
-	// if(n == nullptr)
-	// {
-	// 	Node *n = new Node(Item);
-	// }
-
-	// if(n == nullptr)
-	// {
-	// 	Node *nn = new Node(Item);
-	// 	n = nn;
-	// 	return true;
-	// }
-	// else
-	// {
-	// 	if(Item < n->Data)
-	// 	{
-	// 		//go left
-	// 		add(Item, n->Left);
-	// 	}
-	// 	else
-	// 	{
-	// 		//go right
-	// 		add(Item, n->Right);
-	// 	}
-	// }
-
-
-
-	// else
-	// {
-	// 	// Insert data.
-	// 	if (Item > Item->data)
-	// 	{
-	// 		// Insert right node data, if the 'value'
-	// 		// to be inserted is greater than 'root' node data.
-
-	// 		// Process right nodes.
-	// 		Insert(Item->right, Item);
-	// 	}
-	// 	else if (Item < Item->data)
-	// 	{
-	// 		// Insert left node data, if the 'value'
-	// 		// to be inserted is smaller than 'root' node data.
-
-	// 		// Process left nodes.
-	// 		Insert(Item->left, Item);
-	// 	}
-	// }
- 
-    // // Insert data.
-    // if (value > Item->data) {
-    //     // Insert right node data, if the 'value'
-    //     // to be inserted is greater than 'root' node data.
- 
-    //     // Process right nodes.
-    //     Item->right = Insert(Item->right, value);
-    // }
-    // else if (value < Item->data) {
-    //     // Insert left node data, if the 'value'
-    //     // to be inserted is smaller than 'root' node data.
- 
-    //     // Process left nodes.
-    //     Item->left = Insert(Item->left, value);
-    // } 
-    // return true;
 }
 
 bool rAdd(const T &Item, Node **n)
@@ -390,16 +279,11 @@ BST(const BST<T> &Bst)
 	Node *copyThis = Bst.Root;
 
 	Node *newTree;
-	//Root = newTree;
 
-	//Root = rCC(&copyThis, &newTree);
 	rCC(&copyThis, &newTree);
 
 	//saving the root
 	Root = newTree;
-
-	//return newTree;
-
 }
 
 void rCC(Node **copyThis, Node **newTree)
