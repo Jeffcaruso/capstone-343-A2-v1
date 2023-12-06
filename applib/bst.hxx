@@ -374,7 +374,7 @@ BST(const BST<T> &Bst)
 	Node *copyThis = Bst.Root;
 	//Node *newTree = Root;
 
-	Node *newTree = new Node(Bst.Root->Data);
+	Node *newTree; // = new Node(Bst.Root->Data);
 
 	Root = newTree;
 
@@ -397,9 +397,17 @@ void rCC(Node **copyThis, Node **newTree)
 		(*newTree) = new Node((*copyThis)->Data);
 	}
 	
+	//shouldn't really need these if blocks, but just in case that is what is causing the problem
+	if((*copyThis)->Left != nullptr)
+	{
+		rCC(&((*copyThis)->Left), &((*newTree)->Left));
+	}
+	if((*copyThis)->Right != nullptr)
+	{
+		rCC(&((*copyThis)->Right), &((*newTree)->Right));
+	}
 
-	rCC(&((*copyThis)->Left), &((*newTree)->Left));
-	rCC(&((*copyThis)->Right), &((*newTree)->Right));
+	
 	return;
 	//return *newTree;
 }
