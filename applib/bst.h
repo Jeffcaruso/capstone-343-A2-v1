@@ -195,7 +195,7 @@ public:
 	// Assume the given array is sorted
 	// Assignment specification
 	// NOLINTNEXTLINE
-	BST(const T Arr[], int N) {}
+	//BST(const T Arr[], int N) {}
 
 	// copy constructor
 	//BST(const BST<T> &Bst);
