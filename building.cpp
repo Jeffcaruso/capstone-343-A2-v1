@@ -19,7 +19,5 @@ int main()
     //copy constructor usage (to help with debugging the CC)
 	BST<string> B4(bt);
 
-    // addStr = "z";
-    // bt.add(addStr);
     return 0;
 }

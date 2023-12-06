@@ -89,24 +89,16 @@ TEST(Test1, TestEquality)
 
 	//test equality operators
 	
-	//for now, I want to see if the add method works, re-comment this later...
-	//didn't seem to help much removing this
-	//looking to add -g to see what I can do.
-	//Might need to modify build + building.cpp to see how stuff works there where I can set a -g
+	//verifying == and != with empty
 	EXPECT_TRUE(B1 == B2 && (!(B1 != B2)));
 
 
 	//add letters
 	string letterToAdd = "c";
-	EXPECT_TRUE(B1.add(letterToAdd));
-	EXPECT_TRUE(B2.add(letterToAdd));
+	EXPECT_TRUE(B1.add(letterToAdd));  //c
+	EXPECT_TRUE(B2.add(letterToAdd));  //c
 	letterToAdd = "b";
-	EXPECT_TRUE(B3.add(letterToAdd));
-
-
-	// B1.add("c");
-	// B2.add("c");
-	// B3.add("b");
+	EXPECT_TRUE(B3.add(letterToAdd));  //b
 
 	// testing equality
 	EXPECT_TRUE(B1 == B2 && (!(B1 != B2)));

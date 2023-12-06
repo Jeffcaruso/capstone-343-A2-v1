@@ -78,6 +78,8 @@ TEST(Test4, sample01)
 	//student may fill with tests
 
 	// no tests occuring within this should return true...
+
+  EXPECT_EQ(1,1);
 	
 }
 
