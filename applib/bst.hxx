@@ -27,7 +27,7 @@ int size() const { return sizeHelper(Root); }
 int sizeHelper(Node *node) const
 {
 	//your code here
-	
+
 	return -1;
 }
 
@@ -119,6 +119,8 @@ bool remove(const T &Item)
 BST(const BST<T> &Bst)
 {
 	//your code here
+
+	return;
 }
 
 void rCC(Node **copyThis, Node **newTree)
