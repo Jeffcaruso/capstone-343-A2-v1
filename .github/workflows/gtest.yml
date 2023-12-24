@@ -22,11 +22,12 @@ jobs:
       run: sudo npm install -g @bazel/bazelisk
     - uses: actions/checkout@v1
     - name: g++ compilation
-      run:  g++ -g -std=c++17 -Wall -Wextra -Wno-sign-compare -o bld.out building.cpp
+      run:  g++ -g -std=c++14 -Wall -Wextra -Wno-sign-compare -o bld.out applib/*.cpp building.cpp
     - name: clang tidy build
-      run: clang++ -g -std=c++17 -Wall -Wextra -Wno-sign-compare building.cpp
+      run: clang++ -g -std=c++14 -Wall -Wextra -Wno-sign-compare applib/*.cpp building.cpp  
     - name: Install Valgrind
-      run:  sudo apt install -y valgrind
+      run:  sudo apt update;
+            sudo apt install -y valgrind
     - name: run it
       run: valgrind --leak-check=full --errors-for-leak-kinds=definite --track-origins=yes --error-exitcode=3 ./bld.out
 
@@ -45,7 +46,8 @@ jobs:
     - name: Install Bazel
       run: sudo npm install -g @bazel/bazelisk
     - name: Install Valgrind
-      run:  sudo apt install -y valgrind
+      run:  sudo apt update;
+            sudo apt install -y valgrind
     - uses: actions/checkout@v1
     - name: Run Test
       run:  bazel test --cxxopt=-std=c++14 --verbose_failures --run_under='/usr/bin/valgrind --leak-check=full --errors-for-leak-kinds=definite --error-exitcode=3' --test_output=all //Tests:APP_test
@@ -64,7 +66,8 @@ jobs:
     - name: Install Bazel
       run: sudo npm install -g @bazel/bazelisk
     - name: Install Valgrind
-      run:  sudo apt install -y valgrind
+      run:  sudo apt update;
+            sudo apt install -y valgrind
     - uses: actions/checkout@v1
     - name: Run Test
       run:  bazel test --cxxopt=-std=c++14 --verbose_failures --run_under='/usr/bin/valgrind --leak-check=full --errors-for-leak-kinds=definite --error-exitcode=3' --test_output=all //Tests:APP_test_2
@@ -83,7 +86,8 @@ jobs:
     - name: Install Bazel
       run: sudo npm install -g @bazel/bazelisk
     - name: Install Valgrind
-      run:  sudo apt install -y valgrind
+      run:  sudo apt update;
+            sudo apt install -y valgrind
     - uses: actions/checkout@v1
     - name: Run Test
       run:  bazel test --cxxopt=-std=c++14 --verbose_failures --run_under='/usr/bin/valgrind --leak-check=full --errors-for-leak-kinds=definite --error-exitcode=3' --test_output=all //Tests:APP_test_3
