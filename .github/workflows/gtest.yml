@@ -78,4 +78,3 @@ jobs:
       run: g++ Test4.cpp -lgtest -lgtest_main -pthread
     - name: Run the project
       run: ./a.out
-
