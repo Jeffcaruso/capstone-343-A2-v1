@@ -13,6 +13,8 @@
 // binarysearchtreee.cpp file is included at the bottom of the .h file
 // binarysearchtreee.cpp is part of the template, cannot be compiled separately
 
+//NOTE, your function definitions are in bst.hxx
+
 #ifndef BST_H
 #define BST_H
 
