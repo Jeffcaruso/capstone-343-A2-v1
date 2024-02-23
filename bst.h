@@ -26,6 +26,7 @@
 #include <cstdint> //uint64
 
 // from bst.hxx
+///// #include "bst.hxx" at the bottom...
 // #include <algorithm>
 // #include <iostream>
 #include <stack>

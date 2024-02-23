@@ -1,18 +1,23 @@
 //============================================================================
-// Name        : Test3
-// Test Desc.  : Testing traversal methods on BSTs
-//				 	(coverage for old test 3 method)
+// Name        : Test2
+// Test Desc.  : Testing == (detailed) testing and operations
+//				 	(coverage for old test 2 method)
 // Author      : Jeffrey Caruso, Yusuf Pisan
 // Date    	   : Fall 2023
 //============================================================================
 
 #include <gtest/gtest.h>
-#include "applib/bst.h"
+#include "bst.h"
 
 #include <iostream>
 #include <sstream>
 
 using namespace std;
+
+//note / reminder:
+// use EXPECT_EQ (or _NE) for std::string
+// for c strings, use EXPECT_STREQ (or STRNE)
+// http://google.github.io/googletest/reference/assertions.html
 
 
 /**
@@ -73,51 +78,45 @@ template <class T> void visitorSimple(const T &Item) {
 
 
 
-// Testing traversal
-TEST(Test3, testBSTTraversal)
+
+
+//detailed == testing
+TEST(Test2one, DetailedEqualityTesting)
 {
 	BST<string> B1;
 	BST<string> B2;
 	BST<string> B3;
-	
-	//add to B1
-    for (auto &S : vector<string>{"c", "a", "f", "g", "x"})
-    	B1.add(S);
 
-	//add to B2
-    for (auto &S : vector<string>{"c", "f", "a", "g", "x"})
-    	B2.add(S);
+	//add the following to B1
+	for (auto &S : vector<string>{"c", "a", "f", "g", "x"})
+	{
+		B1.add(S);
+	}
 
-	//add to B3
-    B3.add("b");
+	//add the following to B2
+	for (auto &S : vector<string>{"c", "f", "a", "g", "x"})
+	{
+		B2.add(S);
+	}
 
-	//reset StringStream to ""
-	TreeVisitor::resetSS();
-	B1.inOrderTraverse(TreeVisitor::visitor);
-	string expectedResult = "acfgx";
-	// check that SS matches expected Result
-	EXPECT_EQ(TreeVisitor::getSS(), expectedResult);
+	//add "b" to B3
+	B3.add("b");
 
-	// testing out simpleVisitor to demonstrate
-	// any function that has a matching signature can be called
-	B1.inOrderTraverse(visitorSimple);
+	// == for the 5 node trees
+	EXPECT_TRUE(B1 == B2 && (!(B1 != B2)));
 
-	//reset SS
-	TreeVisitor::resetSS();
-	//do a preorder traversal
-	B1.preOrderTraverse(TreeVisitor::visitor);
-	//set expected result to new expected result...
-	expectedResult = "cafgx";
-	// check that SS matches expected Result
-	EXPECT_EQ(TreeVisitor::getSS(), expectedResult);
+	//copy constructor usage
+	BST<string> B4(B3);
+	// copy constructor for 1-Node trees B3, B4
+	EXPECT_TRUE(B3 == B4 && (!(B3 != B4)));
 
-	TreeVisitor::resetSS();
-	B1.postOrderTraverse(TreeVisitor::visitor);
-	expectedResult = "axgfc";
-	// check that SS matches expected Result
-	EXPECT_EQ(TreeVisitor::getSS(), expectedResult);
+	//copy constructor usage
+	BST<string> B5(B1);
+	// copy constructor for 5-Node trees B1, B5
+	EXPECT_TRUE(B1 == B5 && (!(B5 != B1)));
 
-	// visual check of B1
-	cout << "Visual check B1:" << endl;
-	cout << B1 << endl;
+	//copy constructor usage
+	BST<string> B7("b");
+	// 1-param constructor for 1-Node trees B3, B7
+	EXPECT_TRUE(B3 == B7 && (!(B3 != B7)));
 }

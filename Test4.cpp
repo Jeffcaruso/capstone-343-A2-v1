@@ -1,24 +1,18 @@
 //============================================================================
-// Name        : Test2
-// Test Desc.  : Testing == (detailed) testing and operations
-//				 	(coverage for old test 2 method)
+// Name        : Test4
+// Test Desc.  : Student custom testing aka Testing samplefunctionality
+//				 	(coverage for old testSample01() method)
 // Author      : Jeffrey Caruso, Yusuf Pisan
 // Date    	   : Fall 2023
 //============================================================================
 
 #include <gtest/gtest.h>
-#include "applib/bst.h"
+#include "bst.h"
 
 #include <iostream>
 #include <sstream>
 
 using namespace std;
-
-//note / reminder:
-// use EXPECT_EQ (or _NE) for std::string
-// for c strings, use EXPECT_STREQ (or STRNE)
-// http://google.github.io/googletest/reference/assertions.html
-
 
 /**
  * Testing BST - Binary Search Tree functions
@@ -43,6 +37,7 @@ using namespace std;
  * by creating a singleton class with our visitor functions
  * stringstream SS contains the output from visitor
  */
+
 class TreeVisitor {
 public:
   // never create an instance of TreeVisitor object
@@ -77,46 +72,14 @@ template <class T> void visitorSimple(const T &Item) {
 }
 
 
-
-
-
-//detailed == testing
-TEST(Test2one, DetailedEqualityTesting)
+// Student added test methods as desired to sample...
+TEST(Test4, sample01)
 {
-	BST<string> B1;
-	BST<string> B2;
-	BST<string> B3;
+	//student may fill with tests
 
-	//add the following to B1
-	for (auto &S : vector<string>{"c", "a", "f", "g", "x"})
-	{
-		B1.add(S);
-	}
+	// no tests occuring within this should return true...
 
-	//add the following to B2
-	for (auto &S : vector<string>{"c", "f", "a", "g", "x"})
-	{
-		B2.add(S);
-	}
-
-	//add "b" to B3
-	B3.add("b");
-
-	// == for the 5 node trees
-	EXPECT_TRUE(B1 == B2 && (!(B1 != B2)));
-
-	//copy constructor usage
-	BST<string> B4(B3);
-	// copy constructor for 1-Node trees B3, B4
-	EXPECT_TRUE(B3 == B4 && (!(B3 != B4)));
-
-	//copy constructor usage
-	BST<string> B5(B1);
-	// copy constructor for 5-Node trees B1, B5
-	EXPECT_TRUE(B1 == B5 && (!(B5 != B1)));
-
-	//copy constructor usage
-	BST<string> B7("b");
-	// 1-param constructor for 1-Node trees B3, B7
-	EXPECT_TRUE(B3 == B7 && (!(B3 != B7)));
+  EXPECT_EQ(1,1);
+	
 }
+
