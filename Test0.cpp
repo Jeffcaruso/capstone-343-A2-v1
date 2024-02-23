@@ -42,44 +42,44 @@ using namespace std;
  * by creating a singleton class with our visitor functions
  * stringstream SS contains the output from visitor
  */
-class TreeVisitor
-{
-public:
-	// never create an instance of TreeVisitor object
-	// we'll just use the static functions
-	TreeVisitor() = delete;
+// class TreeVisitor
+// {
+// public:
+// 	// never create an instance of TreeVisitor object
+// 	// we'll just use the static functions
+// 	TreeVisitor() = delete;
 
-	// insert output to SS rather than cout, so we can test it
-	static stringstream SS;
+// 	// insert output to SS rather than cout, so we can test it
+// 	static stringstream SS;
 
-	// get SS as a string
-	static string getSS() { return SS.str(); }
+// 	// get SS as a string
+// 	static string getSS() { return SS.str(); }
 
-	// set SS to be empty string
-	static void resetSS() { SS.str(string()); }
+// 	// set SS to be empty string
+// 	static void resetSS() { SS.str(string()); }
 
-	// instead of cout, insert item into SS, a stringstream object
-	static void visitor(const string &Item) { SS << Item; }
+// 	// instead of cout, insert item into SS, a stringstream object
+// 	static void visitor(const string &Item) { SS << Item; }
 
-	// instead of cout, insert item into SS, a stringstream object
-	static void visitor(const int &Item) { SS << Item; }
-};
+// 	// instead of cout, insert item into SS, a stringstream object
+// 	static void visitor(const int &Item) { SS << Item; }
+// };
 
 // initialize the static variable
 //  warning: initialization of 'SS' with static storage duration
 //  may throw an exception that cannot be caught [cert-err58-cpp]
 //  Not sure how to do it without making code harder to read
 //  NOLINTNEXTLINE
-stringstream TreeVisitor::SS;
+// stringstream TreeVisitor::SS;
 
-template <class T>
-void visitorSimple(const T &Item)
-{
-	cout << "visitorSimple: " << Item;
-}
+// template <class T>
+// void visitorSimple(const T &Item)
+// {
+// 	cout << "visitorSimple: " << Item;
+// }
 
 // Testing ==
-TEST(Test1, TestEquality)
+TEST(Test0, TrivialTest)
 {
 	//B1
 	BST<string> B1;
