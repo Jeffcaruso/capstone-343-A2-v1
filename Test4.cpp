@@ -78,7 +78,7 @@ TEST(Test4, sample01)
 {
 	//student may fill with tests
 
-	// no additional tests occuring within this should return true...
+	// if no additional tests are added, this should always pass....
 
   EXPECT_EQ(1,1);
 	
